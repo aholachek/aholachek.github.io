@@ -1,0 +1,21 @@
+export default [
+  {color: '#f51567', backgroundColor: '#ebe77e'},
+  {color: '#1b33f0', backgroundColor: '#a5b9be'},
+  {color: '#4f10ee', backgroundColor: '#faee81'},
+  {color: '#cbe653', backgroundColor: '#5824f4'},
+  {color: '#82f399', backgroundColor: '#574d6b'},
+  {color: '#fcea73', backgroundColor: '#3222c6'},
+  {color: '#cddf2e', backgroundColor: '#093093'},
+  {color: '#cc3c29', backgroundColor: '#a0df99'},
+  {color: '#95e299', backgroundColor: '#1331b5'},
+  {color: '#f65c92', backgroundColor: '#22097d'},
+  {color: '#a1f9b8', backgroundColor: '#9d24f9'},
+  {color: '#fe0b5c', backgroundColor: '#cccbd6'},
+  {color: '#3a2e92', backgroundColor: '#bcb8d3'},
+  {color: '#170c90', backgroundColor: '#5bc586'},
+  {color: '#1b33f0', backgroundColor: '#a5b9be'},
+  {color: '#6e4ffa', backgroundColor: '#eafe9b'},
+  {color: '#3703e1', backgroundColor: '#cec7b7'},
+  {color: '#4744ea', backgroundColor: '#fbdecb'},
+
+]

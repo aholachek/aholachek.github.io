@@ -1,0 +1,109 @@
+.page a {
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: "";
+    height: 0.5rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: transform 0.2s;
+    transform: scaleX(0);
+    width: 100%;
+    background-color: var(--color);
+    transform-origin: 0 50%;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+/* ==========================================================================
+landing page
+========================================================================== */
+
+.page--landing__content {
+  display: flex;
+  align-items: center;
+  padding-top: 10vh;
+  padding-left: 10vw;
+
+}
+.page--landing__title {
+  font-size: 11vw;
+}
+
+.page--landing__links {
+  line-height: 1.4;
+  margin-top: 3rem;
+  margin: 0;
+  padding: 0;
+}
+
+.page--landing__links li {
+  margin-bottom: 1rem;
+}
+.page--landing__links h2 {
+  font-size: 6vw;
+  margin-bottom: 0;
+}
+
+.page--landing__title {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 0 0.25em 0;
+  cursor: default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.shapes {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* ==========================================================================
+   other pages
+   ========================================================================== */
+
+.page--presentation-list {
+  @include page-content();
+  margin-top: 4rem;
+
+  h1 {
+    font-weight: 200;
+    font-size: 5rem;
+    @media(min-width: $screen-md){
+      font-size: 7rem;
+    }
+    @media(min-width: $screen-lg){
+      font-size: 9rem;
+    }
+  }
+
+  ul {
+    margin-top: 2rem;
+    @include heading-font();
+    font-size: 3rem;
+    @media(min-width: $screen-md){
+      font-size: 4rem;
+    }
+    @media(min-width: $screen-lg){
+      font-size: 5rem;
+    }
+  }
+
+  li {
+    margin-bottom: 2rem;
+  }
+}

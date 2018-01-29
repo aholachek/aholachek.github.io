@@ -1,0 +1,15 @@
+@mixin page-content () {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 40rem;
+  width: 80%;
+}
+
+
+@mixin heading-font () {
+  font-family: "Josefin Sans";
+  text-transform: lowercase;
+  font-weight: 700;
+}
