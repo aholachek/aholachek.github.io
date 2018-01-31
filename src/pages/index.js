@@ -13,12 +13,12 @@ function randomBetween(minValue, maxValue, precision = 2) {
 
 const entryAnimation = {
   options: {
-    shapeColors: ["hsla(0, 0%, 100%, .8)", "hsla(0, 0%, 0%, .6)"],
+    shapeColors: [],
     shapesOnTop: false
   },
   show: {
     lettersAnimationOpts: {
-      duration: 400,
+      duration: 600,
       delay: (t, i) => i * 60,
       easing: "easeOutExpo",
       opacity: {
@@ -26,7 +26,7 @@ const entryAnimation = {
         duration: 100,
         easing: "linear"
       },
-      translateY: (t, i) => (i % 2 ? [anime.random(-350, -300), 0] : [anime.random(300, 350), 0])
+      translateY: (t, i) => (i % 2 ? [anime.random(-350, 350), 0] : [anime.random(450, 450), 0])
     },
     shapesAnimationOpts: {
       duration: 600,
@@ -38,7 +38,7 @@ const entryAnimation = {
       rotate: () => [0, anime.random(-16, 16)],
       opacity: [
         { value: 1, duration: 1, easing: "linear" },
-        { value: 0, duration: 500, delay: 250, easing: "easeOutQuad" }
+        { value: 0, duration: 100, delay: 400, easing: "easeOutQuad" }
       ]
     }
   }
@@ -50,19 +50,48 @@ class IndexPage extends Component {
   }
   componentDidMount() {
     if (this.props.animatingOut) return
-    const title = new Word(this.title, entryAnimation.options)
-    title.show(entryAnimation.show)
-    anime({
-      targets : this.title,
-      scale : [1,.5],
-      delay : 1000
-    })
-    animateInList(this.links, 1000)
+
+    entryAnimation.options.shapeColors = [window.theme.color]
+
+    const rect = this.title.getBoundingClientRect()
+    const translateY = window.innerHeight / 2 - rect.height / 2 - rect.y
+    const translateX = window.innerWidth / 2 - rect.width / 2 - rect.x
+
+    anime
+      .timeline()
+      .add({
+        targets: this.title,
+        translateY,
+        translateX,
+        duration: 1
+      })
+      .add({
+        targets: this.title,
+        duration: 1,
+        opacity: 1,
+      })
+      .finished.then(() => {
+        const title = new Word(this.title, entryAnimation.options)
+        title.show(entryAnimation.show)
+      })
+
+    setTimeout(() => {
+      anime({
+        targets: this.title,
+        translateY: 0,
+        translateX: 0,
+        scale: .4,
+        duration: 200,
+        easing: 'easeInOutSine',
+      }).finished.then(() => {
+        animateInList(this.links)
+      })
+    }, 1250)
   }
 
   render() {
     return (
-      <div className="page--landing__content">
+      <div className="page--list-layout">
         <div>
           <h1
             className="page--landing__title"

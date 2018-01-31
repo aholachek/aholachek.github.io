@@ -97,8 +97,9 @@ function debounce(func, wait, immediate) {
           this.DOM = {};
           this.DOM.el = el;
           this.DOM.svg = svg;
+          svg.style.opacity = .6;
           this.options = {
-              totalShapes: 5
+              totalShapes: 16
           }
           Object.assign(this.options, options);
           this.rect = this.DOM.el.getBoundingClientRect();

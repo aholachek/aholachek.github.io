@@ -24,7 +24,11 @@ class ReplaceComponentRenderer extends React.Component {
   constructor(props) {
     super(props)
     this.state = { prevPageResources: {} }
-    this._theme = colorThemes[Math.floor(Math.random() * colorThemes.length)]
+    const landingPageThemes = colorThemes.filter(t => t.landing)
+    this._theme = landingPageThemes[Math.floor(Math.random() * landingPageThemes.length)]
+    // hehehehehe
+    console.log('theme', this._theme)
+    window.theme = this._theme
   }
 
   // listenerHandler(event) {
@@ -41,6 +45,8 @@ class ReplaceComponentRenderer extends React.Component {
     if (this.props.location.key !== nextProps.location.key) {
       this._prevTheme = this._theme
       this._theme = colorThemes[Math.floor(Math.random() * colorThemes.length)]
+      // hehehehehe
+      window.theme = this._theme
       this.setState({ prevPageResources: this.props.pageResources })
       setTimeout(() => {
         this.setState({

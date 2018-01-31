@@ -13,7 +13,7 @@ class PresentationList extends Component {
   render() {
     const { links, title } = this.props
     return (
-      <div className="page--presentation-list">
+      <div className="page--list-layout">
         <div>
           <h1>{title}</h1>
           <ul
