@@ -1,5 +1,8 @@
 @import './vars';
 @import './mixins';
 @import './base';
-@import './main_pages';
+@import './pages/landing';
+@import './pages/presentation_list';
+@import './pages/post';
+
 @import './page_transitions.scss';

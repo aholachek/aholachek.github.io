@@ -51,7 +51,7 @@ class IndexPage extends Component {
   componentDidMount() {
     if (this.props.animatingOut) return
 
-    entryAnimation.options.shapeColors = [window.theme.color]
+    entryAnimation.options.shapeColors = [this.props.cssVars["--color"]]
 
     const rect = this.title.getBoundingClientRect()
     const translateY = window.innerHeight / 2 - rect.height / 2 - rect.y
@@ -68,7 +68,7 @@ class IndexPage extends Component {
       .add({
         targets: this.title,
         duration: 1,
-        opacity: 1,
+        opacity: 1
       })
       .finished.then(() => {
         const title = new Word(this.title, entryAnimation.options)
@@ -80,9 +80,9 @@ class IndexPage extends Component {
         targets: this.title,
         translateY: 0,
         translateX: 0,
-        scale: .4,
+        scale: 0.4,
         duration: 200,
-        easing: 'easeInOutSine',
+        easing: "easeInOutSine"
       }).finished.then(() => {
         animateInList(this.links)
       })

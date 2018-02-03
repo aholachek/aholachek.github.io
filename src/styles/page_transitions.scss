@@ -1,4 +1,4 @@
-$transition-time: .4s;
+$transition-time: .5s;
 
 .page {
   background-color: var(--background-color);
@@ -22,19 +22,5 @@ $transition-time: .4s;
 
 .page--slide-in-top {
   animation: slideInTop $transition-time;
-  z-index: 2;
-}
-
-@keyframes slideOutTop {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-100%);
-  }
-}
-
-.page--slide-out-top {
-  animation: slideOutTop $transition-time forwards;
   z-index: 2;
 }

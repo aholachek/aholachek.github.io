@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import PresentationList from "./../components/PresentationList"
+import Helmet from "react-helmet"
 
 const links = [
   {
@@ -11,7 +12,6 @@ const links = [
     text: "Codepen",
     href: "https://codepen.com/aholachek",
     external: true
-
   },
   {
     text: "D3 bl.ocks",
@@ -20,8 +20,13 @@ const links = [
   }
 ]
 
-const Code = props => {
-  return <PresentationList title="Code" links={links} />
+const Code = ({ animatingOut }) => {
+  return (
+    <div>
+      <Helmet title="Code" />
+      <PresentationList title="Code" links={links} animatingOut={animatingOut} />
+    </div>
+  )
 }
 
 export default Code

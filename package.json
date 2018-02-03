@@ -10,6 +10,8 @@
     "gatsby-link": "^1.6.34",
     "gatsby-plugin-react-helmet": "^2.0.3",
     "gatsby-plugin-sass": "^1.0.16",
+    "gatsby-remark-images": "^1.5.41",
+    "gatsby-transformer-remark": "^1.7.30",
     "normalize.css": "^7.0.0",
     "react-custom-properties": "^1.2.0",
     "react-helmet": "^5.2.0",

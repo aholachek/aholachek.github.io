@@ -1,5 +1,6 @@
 import React, { Component } from "react"
-import PresentationList from "./../components/PresentationList"
+import PresentationList from "../components/PresentationList"
+import Helmet from "react-helmet"
 
 const links = [
   {
@@ -7,8 +8,13 @@ const links = [
     to: ""
   }
 ]
-const Portfolio = props => {
-  return <PresentationList title="Portfolio" links={links} />
+const Portfolio = ({ animatingOut }) => {
+  return (
+    <div>
+      <Helmet title="Portfolio" />
+      <PresentationList title="Portfolio" links={links} animatingOut={animatingOut} />
+    </div>
+  )
 }
 
 export default Portfolio

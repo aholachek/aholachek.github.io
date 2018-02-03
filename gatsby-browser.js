@@ -18,35 +18,29 @@ const history = createHistory({ getUserConfirmation })
 history.block((location, action) => location.pathname)
 exports.replaceHistory = () => history
 
-const pageTransitionTime = 400
+const pageTransitionTime = 500
+
+const getCSSVars = (d = {}) => {
+  return {
+    "--color": d.background === "lighter" ? d.darker : d.lighter,
+    "--background-color": d.background === "lighter" ? d.lighter : d.darker,
+    "--darker-color": d.darker,
+    "--lighter-color": d.lighter
+  }
+}
 
 class ReplaceComponentRenderer extends React.Component {
   constructor(props) {
     super(props)
     this.state = { prevPageResources: {} }
-    const landingPageThemes = colorThemes.filter(t => t.landing)
-    this._theme = landingPageThemes[Math.floor(Math.random() * landingPageThemes.length)]
-    // hehehehehe
-    console.log('theme', this._theme)
-    window.theme = this._theme
+    this._theme = colorThemes[Math.floor(Math.random() * colorThemes.length)]
   }
 
-  // listenerHandler(event) {
-  //   const nextPageResources = this.props.loader.getResourcesForPathname(
-  //     event.detail.pathname,
-  //     nextPageResources => this.setState({ nextPageResources })
-  //   ) || {}
-  //   this.setState({ exiting: true, nextPageResources })
-  // }
-
-  currentAnimation = null
 
   componentWillReceiveProps(nextProps) {
     if (this.props.location.key !== nextProps.location.key) {
       this._prevTheme = this._theme
       this._theme = colorThemes[Math.floor(Math.random() * colorThemes.length)]
-      // hehehehehe
-      window.theme = this._theme
       this.setState({ prevPageResources: this.props.pageResources })
       setTimeout(() => {
         this.setState({
@@ -63,30 +57,38 @@ class ReplaceComponentRenderer extends React.Component {
     return (
       <div>
         {PrevComponent && (
-          <CustomProperties
-            properties={{
-              "--color": this._prevTheme.color,
-              "--background-color": this._prevTheme.backgroundColor
-            }}
-          >
+          <CustomProperties properties={getCSSVars(this._prevTheme)}>
             <div className="page" key={this.state.prevPageResources.page.path}>
-              {this.state.prevPageResources.page.path !== "/" && <Header />}
-              <PrevComponent {...this.props} {...this.state.prevPageResources.json} animatingOut />
+              {this.state.prevPageResources.page.path !== "/" && (
+                <Header path={this.state.prevPageResources.page.path} />
+              )}
+              <main>
+                <PrevComponent
+                  {...this.props}
+                  {...this.state.prevPageResources.json}
+                  animatingOut
+                  cssVars={getCSSVars(this._theme)}
+                />
+              </main>
             </div>
           </CustomProperties>
         )}
-        <CustomProperties
-          properties={{
-            "--color": this._theme.color,
-            "--background-color": this._theme.backgroundColor
-          }}
-        >
+        <CustomProperties properties={getCSSVars(this._theme)}>
           <div
             className={`page ${PrevComponent ? "page--slide-in-top" : ""}`}
             key={this.props.pageResources.page.path}
           >
-            {this.props.pageResources.page.path !== "/" && <Header />}
-            <CurrentComponent {...this.props} {...this.props.pageResources.json} />
+            {this.props.pageResources.page.path !== "/" && (
+              <Header path={this.props.pageResources.page.path} />
+            )}
+            <main>
+              <CurrentComponent
+                {...this.props}
+                {...this.props.pageResources.json}
+                cssVars={getCSSVars(this._theme)}
+                animatingIn={PrevComponent}
+              />
+            </main>
           </div>
         </CustomProperties>
       </div>

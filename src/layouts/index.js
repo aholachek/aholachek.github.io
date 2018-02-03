@@ -8,10 +8,10 @@ import "./../styles/index.scss"
 const TemplateWrapper = ({ children, location }) => (
   <div>
     <Helmet
-      title="Gatsby Default Starter"
+      title="Alex Holachek"
       meta={[
-        { name: "description", content: "Sample" },
-        { name: "keywords", content: "sample, something" }
+        { name: "description", content: "Alex Holachek's website" },
+        { name: "keywords", content: "front end development, ux" }
       ]}
     />
     {children()}
