@@ -18,7 +18,7 @@ class PresentationList extends Component {
     anime
       .timeline()
       .add({
-        delay: 400,
+        delay: 500,
         begin: () => {
           content.style.display = "block"
         },
@@ -26,19 +26,21 @@ class PresentationList extends Component {
         translateY: ["50vh", 0],
         opacity: [0, 1],
         easing: "easeInSine",
-        duration: 400
+        duration: 300
       })
       .add({
         targets: content.querySelectorAll("li"),
         opacity: [0, 1],
-        delay: (x, i) => i * 100,
-        duration: 200,
+        delay: (x, i) => i * 200,
+        duration: 250,
         easing: "easeInSine",
+        offset: '-=100'
       })
   }
 
   render() {
     const { links, title } = this.props
+    console.log(links)
     return (
       <div className="page--list" ref={el => (this.el = el)}>
         <div>
@@ -53,7 +55,14 @@ class PresentationList extends Component {
             >
               {links.map(l => (
                 <li style={{ opacity: 0 }}>
-                  {l.external ? <a href={l.href}>{l.text}</a> : <Link to={l.href}>{l.text}</Link>}
+                  {l.external ? (
+                    <a href={l.to}>{l.text}</a>
+                  ) : (
+                    <Link to={l.to}>
+                      {l.text}
+                      {!!l.img && <img src={l.img} />}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

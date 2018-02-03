@@ -13,7 +13,6 @@ function renderLinks(path) {
 }
 
 const Header = ({ path }) => {
-  debugger
   return (
     <nav className="header">
       <div>

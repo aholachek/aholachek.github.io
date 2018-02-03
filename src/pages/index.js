@@ -51,47 +51,54 @@ class IndexPage extends Component {
   componentDidMount() {
     if (this.props.animatingOut) return
 
-    entryAnimation.options.shapeColors = [this.props.cssVars["--color"]]
+    function animate() {
+      entryAnimation.options.shapeColors = [this.props.cssVars["--color"]]
 
-    const rect = this.title.getBoundingClientRect()
-    const translateY = window.innerHeight / 2 - rect.height / 2 - rect.y
-    const translateX = window.innerWidth / 2 - rect.width / 2 - rect.x
+      const rect = this.title.getBoundingClientRect()
+      const translateY = window.innerHeight / 2 - rect.height / 2 - rect.y
+      const translateX = window.innerWidth / 2 - rect.width / 2 - rect.x
 
-    anime
-      .timeline()
-      .add({
-        targets: this.title,
-        translateY,
-        translateX,
-        duration: 1
-      })
-      .add({
-        targets: this.title,
-        duration: 1,
-        opacity: 1
-      })
-      .finished.then(() => {
-        const title = new Word(this.title, entryAnimation.options)
-        title.show(entryAnimation.show)
-      })
+      anime
+        .timeline()
+        .add({
+          targets: this.title,
+          translateY,
+          translateX,
+          duration: 1
+        })
+        .add({
+          targets: this.title,
+          duration: 1,
+          opacity: 1
+        })
+        .finished.then(() => {
+          const title = new Word(this.title, entryAnimation.options)
+          title.show(entryAnimation.show)
+        })
 
-    setTimeout(() => {
-      anime({
-        targets: this.title,
-        translateY: 0,
-        translateX: 0,
-        scale: 0.4,
-        duration: 200,
-        easing: "easeInOutSine"
-      }).finished.then(() => {
-        animateInList(this.links)
-      })
-    }, 1250)
+      setTimeout(() => {
+        anime({
+          targets: this.title,
+          translateY: 0,
+          translateX: 0,
+          scale: 0.4,
+          duration: 200,
+          easing: "easeInOutSine"
+        }).finished.then(() => {
+          animateInList(this.links)
+        })
+      }, 1250)
+    }
+
+    animate = animate.bind(this)
+    if (this.props.animatingIn) {
+      setTimeout(animate, 400)
+    } else animate()
   }
 
   render() {
     return (
-      <div className="page--list-layout">
+      <div className="page--landing">
         <div>
           <h1
             className="page--landing__title"

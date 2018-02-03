@@ -1,4 +1,3 @@
-
 .page--list__header {
   @include page-content();
   h1 {
@@ -28,6 +27,14 @@
     }
   }
 
+  img {
+    max-height: 24rem;
+    display: block;
+    margin-bottom: 5rem;
+    margin-top: 2rem;
+    position:relative;
+  }
+
   li {
     margin-bottom: 2.5rem;
     position: relative;
@@ -35,8 +42,6 @@
       content: counter(list-counter);
       counter-increment: list-counter;
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
       left: -4rem;
     }
   }

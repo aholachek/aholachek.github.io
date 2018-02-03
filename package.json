@@ -6,6 +6,7 @@
   "dependencies": {
     "animejs": "^2.2.0",
     "charming": "^2.0.2",
+    "fs": "^0.0.1-security",
     "gatsby": "^1.9.172",
     "gatsby-link": "^1.6.34",
     "gatsby-plugin-react-helmet": "^2.0.3",
