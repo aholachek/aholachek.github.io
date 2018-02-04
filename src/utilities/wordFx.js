@@ -37,7 +37,7 @@ function randomBetween(minValue, maxValue, precision = 2) {
   )
 }
 
-let winsize = { width: window.innerWidth, height: window.innerHeight }
+let winsize;
 
 class Shape {
   constructor(type, letterRect, options) {
