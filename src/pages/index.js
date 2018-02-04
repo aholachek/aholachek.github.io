@@ -54,7 +54,7 @@ class IndexPage extends Component {
     first: true
   }
   componentDidMount() {
-    if (this.props.animatingOut) return
+    if (this.props.animatingOut || typeof window === "undefined") return
 
     function animate() {
       entryAnimation.options.shapeColors = [this.props.cssVars["--color"]]
@@ -89,8 +89,7 @@ class IndexPage extends Component {
           scale: 0.4,
           duration: 200,
           easing: "easeInOutSine"
-        })
-          .finished.then(() => animateInList(this.links))
+        }).finished.then(() => animateInList(this.links))
       }, 1250)
     }
 

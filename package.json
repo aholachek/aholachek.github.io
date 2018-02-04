@@ -10,6 +10,7 @@
     "gatsby": "^1.9.172",
     "gatsby-link": "^1.6.34",
     "gatsby-plugin-favicon": "^2.1.1",
+    "gatsby-plugin-google-analytics": "^1.0.17",
     "gatsby-plugin-react-helmet": "^2.0.3",
     "gatsby-plugin-sass": "^1.0.16",
     "gatsby-remark-images": "^1.5.41",
@@ -30,7 +31,6 @@
     "develop": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
     "deploy": "gatsby build && gh-pages -b master -d public"
-
   },
   "devDependencies": {
     "gh-pages": "^1.1.0",
