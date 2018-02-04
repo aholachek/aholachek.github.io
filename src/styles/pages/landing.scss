@@ -1,5 +1,6 @@
 .page--landing {
   @include page-content();
+  padding-top:4rem;
 }
 
 .page--landing__title {
