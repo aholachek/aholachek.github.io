@@ -24,7 +24,7 @@ const links = [
     img: gifImg
   },
   {
-    text: "Rethinking astrophysics author network visualizations",
+    text: "Rethinking the ADS author network visualizations",
     to: "/portfolio/adsAuthorNetworks",
     img: networkImg
   }

@@ -12,12 +12,13 @@
 
 .page--post__content {
   background-color: white;
-  min-height: 50vh;
+  min-height: 55vh;
   display: block;
   color: var(--darker-color);
   padding-bottom: 4rem;
   > div {
     @include page-content();
+    padding-top: 2rem;
   }
 
   a {
@@ -29,7 +30,7 @@
     );
     background-size: 100%;
     background-repeat: no-repeat;
-    background-position: 0 2.6rem;
+    background-position: 0 1.8rem;
     &:hover {
       cursor: pointer;
       background-image: linear-gradient(
@@ -39,5 +40,31 @@
       );
       background-position: 0 0;
     }
+  }
+}
+
+.page--post__content {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $color-text;
+    text-transform: none;
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    font-size: 2.9rem;
+  }
+
+  h3 {
+    font-size: 2.4rem;
+  }
+
+  img {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 }

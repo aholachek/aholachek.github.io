@@ -20,7 +20,6 @@ class Post extends Component {
         },
         targets: content,
         translateY: ["50vh", 0],
-        opacity: [0, 1],
         easing: "easeInSine",
         duration: 300
       })

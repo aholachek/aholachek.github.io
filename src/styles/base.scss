@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans:400,700");
+
 body {
-  font-family: "Josefin Sans", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto",
-    "Helvetica Neue", Arial, sans-serif;
+  font-family: $base-font-family;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -26,10 +26,6 @@ ul {
   padding: 0;
 }
 
-.opacity-0 {
-  opacity: 0;
-}
-
 .header {
   @include page-content();
   padding-bottom: 1rem;
@@ -40,9 +36,11 @@ ul {
   align-items: center;
   .links {
     justify-self: flex-end;
-    display: flex;
-    div {
-      margin-left: 3rem;
+    @media (min-width: $screen-md) {
+      display: flex;
+      div {
+        margin-left: 3rem;
+      }
     }
   }
   .home-icon {
@@ -57,7 +55,7 @@ ul {
       content: "";
       height: 0.2rem;
       position: absolute;
-      bottom: -.3rem;
+      bottom: -0.3rem;
       left: 0;
       transition: transform 0.2s;
       transform: scaleX(0);
@@ -79,4 +77,23 @@ ul {
   width: 1px;
   height: 1px;
   overflow: hidden;
+}
+
+video,
+img {
+  max-width: 100%;
+}
+
+.lead {
+  font-size: 2.2rem;
+  line-height: 1.4;
+  font-weight: 400;
+  font-family: $base-font-family;
+}
+
+p {
+  font-size: 1.7rem;
+  line-height: 1.5;
+  font-weight: 400;
+  color: $color-text;
 }

@@ -5,17 +5,17 @@ import Helmet from "react-helmet"
 const links = [
   {
     text: "Github",
-    href: "https://github.com/aholachek",
+    to: "https://github.com/aholachek",
     external: true
   },
   {
     text: "Codepen",
-    href: "https://codepen.com/aholachek",
+    to: "https://codepen.com/aholachek",
     external: true
   },
   {
     text: "D3 bl.ocks",
-    href: "https://bl.ocks.org/aholachek",
+    to: "https://bl.ocks.org/aholachek",
     external: true
   }
 ]

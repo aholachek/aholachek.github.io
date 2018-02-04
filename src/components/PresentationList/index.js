@@ -24,7 +24,6 @@ class PresentationList extends Component {
         },
         targets: content,
         translateY: ["50vh", 0],
-        opacity: [0, 1],
         easing: "easeInSine",
         duration: 300
       })
@@ -40,7 +39,6 @@ class PresentationList extends Component {
 
   render() {
     const { links, title } = this.props
-    console.log(links)
     return (
       <div className="page--list" ref={el => (this.el = el)}>
         <div>

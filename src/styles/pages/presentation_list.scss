@@ -5,21 +5,21 @@
     @media (min-width: $screen-lg) {
       font-size: 9rem;
     }
-    margin-bottom: 4rem;
   }
 }
 
 .page--list__content {
   background-color: white;
-  min-height: 50vh;
+  min-height: 55vh;
   display: block;
   color: var(--darker-color);
   padding-bottom: 4rem;
+  padding-top: 1rem;
 
   ul {
     counter-reset: list-counter;
+    margin-top: 1rem;
     @include page-content();
-    margin-top: 2rem;
     @include heading-font();
     font-size: 2rem;
     @media (min-width: $screen-md) {
@@ -29,10 +29,11 @@
 
   img {
     max-height: 24rem;
+    width: auto;
     display: block;
     margin-bottom: 5rem;
     margin-top: 2rem;
-    position:relative;
+    position: relative;
   }
 
   li {

@@ -3,7 +3,7 @@ import Link from "gatsby-link"
 
 const links = ["code", "portfolio", "articles"]
 function renderLinks(path) {
-  return links.filter(l => path.indexOf(l) === -1).map(l => {
+  return links.filter(l => !new RegExp(`${l}/$`).test(path)).map(l => {
     return (
       <div>
         <Link to={`/${l}`}>{l}</Link>
