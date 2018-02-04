@@ -34,16 +34,16 @@ const entryAnimation = {
       translateY: (t, i) => (i % 2 ? [anime.random(-350, 350), 0] : [anime.random(450, 450), 0])
     },
     shapesAnimationOpts: {
-      duration: 600,
+      duration: 1000,
       delay: (t, i) => i * 30,
-      easing: "easeOutExpo",
+      elasticity: 50,
       translateX: t => [t.dataset.x, anime.random(-200, 200) + parseFloat(t.dataset.x)],
       translateY: t => [t.dataset.y, anime.random(-200, 200) + parseFloat(t.dataset.y)],
-      scale: () => [randomBetween(0.5, 3), randomBetween(0.5, 3)],
+      scale: () => [randomBetween(0.8, 3), randomBetween(0.8, 3)],
       rotate: () => [0, anime.random(-16, 16)],
       opacity: [
         { value: 1, duration: 1, easing: "linear" },
-        { value: 0, duration: 100, delay: 400, easing: "easeOutQuad" }
+        { value: 0, duration: 150, delay: 700, easing: "easeOutQuad" }
       ]
     }
   }
