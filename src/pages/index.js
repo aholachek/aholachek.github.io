@@ -3,12 +3,17 @@ import Link from "gatsby-link"
 import PropTypes from "prop-types"
 import anime from "animejs"
 import animateInList from "./../utilities/animate-in-list"
-import Word from "./../utilities/WordFx"
+import Word from "../utilities/WordFx"
+import icons from "../utilities/icons"
 
 function randomBetween(minValue, maxValue, precision = 2) {
   return parseFloat(
     Math.min(minValue + Math.random() * (maxValue - minValue), maxValue).toFixed(precision)
   )
+}
+
+function getRandomFromArray(arr) {
+  return arr[Math.floor(Math.random() * arr.length)]
 }
 
 const entryAnimation = {
@@ -84,9 +89,8 @@ class IndexPage extends Component {
           scale: 0.4,
           duration: 200,
           easing: "easeInOutSine"
-        }).finished.then(() => {
-          animateInList(this.links)
         })
+          .finished.then(() => animateInList(this.links))
       }, 1250)
     }
 
@@ -98,7 +102,12 @@ class IndexPage extends Component {
 
   render() {
     return (
-      <div className="page--landing">
+      <div
+        className="page--landing"
+        ref={el => {
+          this.el = el
+        }}
+      >
         <div>
           <h1
             className="page--landing__title"

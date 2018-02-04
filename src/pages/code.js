@@ -10,7 +10,7 @@ const links = [
   },
   {
     text: "Codepen",
-    to: "https://codepen.com/aholachek",
+    to: "https://codepen.io/aholachek",
     external: true
   },
   {
