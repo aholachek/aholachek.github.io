@@ -37,8 +37,6 @@ function randomBetween(minValue, maxValue, precision = 2) {
   )
 }
 
-let winsize;
-
 class Shape {
   constructor(type, letterRect, options) {
     this.DOM = {}
@@ -135,33 +133,23 @@ class Word {
     }
     Object.assign(this.options, options)
     this.init()
-    this.initEvents()
   }
   init() {
     this.createSVG()
     charming(this.DOM.el)
+
     this.letters = []
     Array.from(this.DOM.el.querySelectorAll("span")).forEach(letter =>
       this.letters.push(new Letter(letter, this.DOM.svg, this.options))
     )
   }
-  initEvents() {
-    window.addEventListener(
-      "resize",
-      debounce(() => {
-        winsize = { width: window.innerWidth, height: window.innerHeight }
-        this.DOM.svg.setAttribute("width", `${winsize.width}px`)
-        this.DOM.svg.setAttribute("height", `${winsize.width}px`)
-        this.DOM.svg.setAttribute("viewbox", `0 0 ${winsize.width} ${winsize.height}`)
-      }, 20)
-    )
-  }
   createSVG() {
+    this.winsize = { width: window.innerWidth, height: window.innerHeight }
     this.DOM.svg = document.createElementNS("http://www.w3.org/2000/svg", "svg")
     this.DOM.svg.setAttribute("class", "shapes")
-    this.DOM.svg.setAttribute("width", `${winsize.width}px`)
-    this.DOM.svg.setAttribute("height", `${winsize.width}px`)
-    this.DOM.svg.setAttribute("viewbox", `0 0 ${winsize.width} ${winsize.height}`)
+    this.DOM.svg.setAttribute("width", `${this.winsize.width}px`)
+    this.DOM.svg.setAttribute("height", `${this.winsize.width}px`)
+    this.DOM.svg.setAttribute("viewbox", `0 0 ${this.winsize.width} ${this.winsize.height}`)
     if (this.options.shapesOnTop) {
       this.DOM.el.parentNode.insertBefore(this.DOM.svg, this.DOM.el.nextSibling)
     } else {
