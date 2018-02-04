@@ -1,0 +1,98 @@
+{
+  "assetsByChunkName": {
+    "path---portfolio-ads-author-networks": [
+      "path---portfolio-ads-author-networks-a0e39f21c11f6a62c5ab.js",
+      "path---portfolio-ads-author-networks-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "path---portfolio-progressive-mass": [
+      "path---portfolio-progressive-mass-a0e39f21c11f6a62c5ab.js",
+      "path---portfolio-progressive-mass-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "component---src-pages-index-js": [
+      "component---src-pages-index-js-1c9463b9647c16b39708.js",
+      "component---src-pages-index-js-1c9463b9647c16b39708.js.map"
+    ],
+    "path---articles": [
+      "path---articles-a0e39f21c11f6a62c5ab.js",
+      "path---articles-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "path---": [
+      "path----557518bd178906f8d58a.js",
+      "path----557518bd178906f8d58a.js.map"
+    ],
+    "component---src-pages-portfolio-progressive-mass-index-js": [
+      "component---src-pages-portfolio-progressive-mass-index-js-f1fc9adec6773776a657.js",
+      "component---src-pages-portfolio-progressive-mass-index-js-f1fc9adec6773776a657.js.map"
+    ],
+    "component---src-layouts-index-js": [
+      "component---src-layouts-index-js-106023da327f983ee4a0.js",
+      "component---src-layouts-index-js-106023da327f983ee4a0.js.map"
+    ],
+    "path---portfolio-reaction-gif-generator": [
+      "path---portfolio-reaction-gif-generator-a0e39f21c11f6a62c5ab.js",
+      "path---portfolio-reaction-gif-generator-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "path---index": [
+      "path---index-a0e39f21c11f6a62c5ab.js",
+      "path---index-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "path---code": [
+      "path---code-a0e39f21c11f6a62c5ab.js",
+      "path---code-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "path---portfolio-redesigning-ads": [
+      "path---portfolio-redesigning-ads-a0e39f21c11f6a62c5ab.js",
+      "path---portfolio-redesigning-ads-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "component---src-pages-404-js": [
+      "component---src-pages-404-js-4503918ea3a16cfcdb75.js",
+      "component---src-pages-404-js-4503918ea3a16cfcdb75.js.map"
+    ],
+    "component---src-pages-portfolio-redesigning-ads-index-js": [
+      "component---src-pages-portfolio-redesigning-ads-index-js-590e74a4c294b48e127d.js",
+      "component---src-pages-portfolio-redesigning-ads-index-js-590e74a4c294b48e127d.js.map"
+    ],
+    "component---src-pages-code-js": [
+      "component---src-pages-code-js-88fd195d3eab6e7c85d9.js",
+      "component---src-pages-code-js-88fd195d3eab6e7c85d9.js.map"
+    ],
+    "commons": [
+      "commons-7137ce264cae510d8402.js",
+      "commons-7137ce264cae510d8402.js.map"
+    ],
+    "component---src-pages-articles-js": [
+      "component---src-pages-articles-js-db402421ccd5c0e15aed.js",
+      "component---src-pages-articles-js-db402421ccd5c0e15aed.js.map"
+    ],
+    "path---404-html": [
+      "path---404-html-a0e39f21c11f6a62c5ab.js",
+      "path---404-html-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "component---src-pages-portfolio-ads-author-networks-index-js": [
+      "component---src-pages-portfolio-ads-author-networks-index-js-81788adf8943528ce895.js",
+      "component---src-pages-portfolio-ads-author-networks-index-js-81788adf8943528ce895.js.map"
+    ],
+    "path---portfolio": [
+      "path---portfolio-a0e39f21c11f6a62c5ab.js",
+      "path---portfolio-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "component---src-pages-portfolio-reaction-gif-generator-index-js": [
+      "component---src-pages-portfolio-reaction-gif-generator-index-js-e5be9c09cb2646527c38.js",
+      "component---src-pages-portfolio-reaction-gif-generator-index-js-e5be9c09cb2646527c38.js.map"
+    ],
+    "app": [
+      "app-f580733ccfcd5444cee0.js",
+      "build-js-styles.css",
+      "app-f580733ccfcd5444cee0.js.map",
+      "build-js-styles.css.map"
+    ],
+    "component---src-pages-portfolio-js": [
+      "component---src-pages-portfolio-js-3a7dde45c40864b294b0.js",
+      "component---src-pages-portfolio-js-3a7dde45c40864b294b0.js.map"
+    ],
+    "path---404": [
+      "path---404-a0e39f21c11f6a62c5ab.js",
+      "path---404-a0e39f21c11f6a62c5ab.js.map"
+    ]
+  }
+}
