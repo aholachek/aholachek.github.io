@@ -29,7 +29,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
-    "deploy": "gatsby build && gh-pages -b master -d public",
+    "deploy": "gatsby build && gh-pages -b master -d public"
 
   },
   "devDependencies": {
