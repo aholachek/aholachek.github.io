@@ -33,7 +33,7 @@ class PresentationList extends Component {
         delay: (x, i) => i * 200,
         duration: 250,
         easing: "easeInSine",
-        offset: '-=100'
+        offset: "-=100"
       })
   }
 
@@ -46,24 +46,26 @@ class PresentationList extends Component {
             <h1>{title}</h1>
           </div>
           <div className="page--list__content" style={{ display: "none" }}>
-            <ul
-              ref={el => {
-                this.list = el
-              }}
-            >
-              {links.map(l => (
-                <li style={{ opacity: 0 }}>
-                  {l.external ? (
-                    <a href={l.to}>{l.text}</a>
-                  ) : (
-                    <Link to={l.to}>
-                      {l.text}
-                      {!!l.img && <img src={l.img} />}
-                    </Link>
-                  )}
-                </li>
-              ))}
-            </ul>
+            <div>
+              <ul
+                ref={el => {
+                  this.list = el
+                }}
+              >
+                {links.map(l => (
+                  <li style={{ opacity: 0 }} key={l.to}>
+                    {l.external ? (
+                      <a href={l.to}>{l.text}</a>
+                    ) : (
+                      <Link to={l.to}>
+                        {l.text}
+                        {!!l.img && <img src={l.img} />}
+                      </Link>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
