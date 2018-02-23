@@ -86,7 +86,7 @@ class IndexPage extends Component {
           targets: this.title,
           translateY: 0,
           translateX: 0,
-          scale: 0.4,
+          scale: 0.45,
           duration: 200,
           easing: "easeInOutSine"
         }).finished.then(() => animateInList(this.links))
