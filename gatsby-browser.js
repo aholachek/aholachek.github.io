@@ -5,6 +5,7 @@ import createHistory from "history/createBrowserHistory"
 import CustomProperties from "react-custom-properties"
 import colorThemes from "./color-themes"
 import Header from "./src/components/Header"
+import AboutMe from "./src/components/AboutMe"
 
 const historyExitingEventType = `history::exiting`
 
@@ -34,7 +35,7 @@ class ReplaceComponentRenderer extends React.Component {
     super(props)
     this.state = { prevPageResources: {} }
     const newThemes = this._theme ? colorThemes.filter(t => t !== this._theme) : colorThemes
-    this._theme = newThemes[Math.floor(Math.random() * newThemes .length)]
+    this._theme = newThemes[Math.floor(Math.random() * newThemes.length)]
   }
 
   componentWillReceiveProps(nextProps) {
@@ -90,6 +91,7 @@ class ReplaceComponentRenderer extends React.Component {
               />
             </main>
           </div>
+          <AboutMe />
         </CustomProperties>
       </div>
     )

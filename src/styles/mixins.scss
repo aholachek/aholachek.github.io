@@ -8,9 +8,31 @@
   max-width: 50rem;
 }
 
-
 @mixin heading-font () {
   font-family: "Josefin Sans";
   text-transform: lowercase;
   font-weight: 700;
+}
+
+@mixin interesting-link ($position: 1.8rem) {
+  a {
+    transition: background-position 0.15s 0.1s;
+    background-image: linear-gradient(
+      to bottom,
+      var(--lighter-color) 0%,
+      var(--lighter-color) 100%
+    );
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: 0 $position;
+    &:hover {
+      cursor: pointer;
+      background-image: linear-gradient(
+        to bottom,
+        var(--lighter-color) 0%,
+        var(--lighter-color) 100%
+      );
+      background-position: 0 0;
+    }
+  }
 }

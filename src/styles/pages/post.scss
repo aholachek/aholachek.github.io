@@ -21,26 +21,7 @@
     padding-top: 2rem;
   }
 
-  a {
-    transition: background-position 0.15s 0.1s;
-    background-image: linear-gradient(
-      to bottom,
-      var(--lighter-color) 0%,
-      var(--lighter-color) 100%
-    );
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: 0 1.8rem;
-    &:hover {
-      cursor: pointer;
-      background-image: linear-gradient(
-        to bottom,
-        var(--lighter-color) 0%,
-        var(--lighter-color) 100%
-      );
-      background-position: 0 0;
-    }
-  }
+  @include interesting-link();
 }
 
 .page--post__content {

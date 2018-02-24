@@ -1,0 +1,141 @@
+.about-me__trigger-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 5;
+  height: 5rem;
+  width: 5rem;
+  display: flex;
+  font-size: 3.2rem;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+  font-weight: bold;
+  text-transform: lowercase;
+  border-radius: 100px;
+  background-color: var(--color);
+  color: var(--background-color);
+  border: 0;
+  font-family: "Josefin Sans";
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+  outline: 0;
+  transform-origin: 100% 100%;
+  overflow: auto;
+
+  span {
+    height: 2.5rem;
+    display: inline-block;
+  }
+
+  &.active {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    bottom: 0;
+    right: 0;
+    cursor: default;
+  }
+}
+
+@keyframes growUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.about-me__span {
+  opacity: 0;
+  animation: growUp 0.5s forwards;
+  animation-delay: 400ms;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-me__container {
+  padding-top: 2rem;
+  max-width: 800px;
+  margin: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: left;
+  text-transform: none;
+
+  h1 {
+    font-size: 2.8rem;
+    margin-top: 5rem;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    animation: fadeInDown 0.5s forwards;
+    animation-delay: 400ms;
+    opacity: 0;
+
+    @media (min-width: $screen-md) {
+      font-size: 4.8rem;
+      margin-top: 0;
+    }
+  }
+}
+
+.about-me__contents {
+  background: white;
+  color: $color-text;
+  @include interesting-link(1.5rem);
+  padding: 1.5rem;
+  @media (min-width: $screen-md) {
+    padding: 2.5rem;
+  }
+  font-weight: normal;
+  opacity: 0;
+  animation: fadeInDown 0.5s forwards;
+  animation-delay: 800ms;
+  p {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 0;
+    @media (min-width: $screen-md) {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+.about-me__close-btn {
+  outline: 0;
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  cursor: pointer;
+  height: 4rem;
+  width: 4rem;
+  border: 0;
+  background-color: transparent;
+  opacity: 0;
+  animation: fadeInDown 0.5s forwards;
+  animation-delay: 1200ms;
+  path {
+    stroke: var(--background-color);
+    fill: var(--background-color);
+  }
+  svg {
+    transition: transform 0.4s;
+  }
+  &:hover {
+    svg {
+      transform: scale(1.2);
+    }
+  }
+}
