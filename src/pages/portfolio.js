@@ -32,7 +32,7 @@ const links = [
 const Portfolio = ({ animatingOut }) => {
   return (
     <div>
-      <Helmet title="Portfolio" />
+      <Helmet title="Alex Holachek | Portfolio" />
       <PresentationList title="Portfolio" links={links} animatingOut={animatingOut} />
     </div>
   )

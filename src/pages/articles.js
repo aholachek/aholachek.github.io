@@ -31,7 +31,7 @@ const links = [
 const Articles = ({ animatingOut }) => {
   return (
     <div>
-      <Helmet title="Articles" />
+      <Helmet title="Alex Holachek | Articles" />
       <PresentationList title="Articles" links={links} animatingOut={animatingOut} />
     </div>
   )

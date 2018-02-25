@@ -34,14 +34,14 @@ class ReplaceComponentRenderer extends React.Component {
   constructor(props) {
     super(props)
     this.state = { prevPageResources: {} }
-    const newThemes = this._theme ? colorThemes.filter(t => t !== this._theme) : colorThemes
-    this._theme = newThemes[Math.floor(Math.random() * newThemes.length)]
+    this._theme = colorThemes[Math.floor(Math.random() * colorThemes.length)]
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.location.key !== nextProps.location.key) {
       this._prevTheme = this._theme
-      this._theme = colorThemes[Math.floor(Math.random() * colorThemes.length)]
+      const newThemes = colorThemes.filter(t => t !== this._theme)
+      this._theme = newThemes[Math.floor(Math.random() * newThemes.length)]
       this.setState({ prevPageResources: this.props.pageResources })
       setTimeout(() => {
         this.setState({

@@ -23,7 +23,7 @@ const links = [
 const Code = ({ animatingOut }) => {
   return (
     <div>
-      <Helmet title="Code" />
+      <Helmet title="Alex Holachek | Code" />
       <PresentationList title="Code" links={links} animatingOut={animatingOut} />
     </div>
   )
