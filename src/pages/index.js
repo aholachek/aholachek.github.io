@@ -98,9 +98,9 @@ class IndexPage extends Component {
             anime({
               targets: buttonEl,
               opacity: 1,
-              translateX: [80, 0],
-              delay: 700,
-              duration: 100
+              translateY: [60, 0],
+              delay: 1000,
+              duration: 800
             })
           })
       }, 1250)
