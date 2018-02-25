@@ -21,7 +21,7 @@
   transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out, width .5s ease-in-out, height .5s ease-in-out, border-radius .5s ease-in-out, right .5s ease-in-out, bottom .5s ease-in-out;
   outline: 0;
   transform-origin: 100% 100%;
-  overflow: auto;
+  overflow: hidden;
 
   .about-me__question-mark {
     height: 2.5rem;
@@ -40,6 +40,7 @@
     bottom: 0;
     right: 0;
     cursor: default;
+    overflow-y: auto;
   }
 }
 
@@ -73,6 +74,7 @@
 
 .about-me__container {
   padding-top: 2rem;
+  padding-bottom: 2rem;
   max-width: 800px;
   margin: auto;
   padding-left: 1rem;
@@ -82,7 +84,7 @@
 
   h1 {
     font-size: 2.8rem;
-    margin-top: 5rem;
+    margin-top: 4rem;
     line-height: 1.1;
     margin-bottom: 2rem;
     animation: fadeInDown 0.5s forwards;
@@ -90,7 +92,7 @@
     opacity: 0;
 
     @media (min-width: $screen-md) {
-      font-size: 4.8rem;
+      font-size: 4.2rem;
       margin-top: 0;
     }
   }

@@ -28,8 +28,9 @@ class AboutMe extends Component {
             <path d="M1490 1322q0 40-28 68l-136 136q-28 28-68 28t-68-28l-294-294-294 294q-28 28-68 28t-68-28l-136-136q-28-28-28-68t28-68l294-294-294-294q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 294 294-294q28-28 68-28t68 28l136 136q28 28 28 68t-28 68l-294 294 294 294q28 28 28 68z" />
           </svg>
         </button>
-        <h1>Hi, thanks for visiting!</h1>
         <div className="about-me__contents">
+        <h1>Hi, thanks for visiting!</h1>
+
           <p>I'm a front end developer who loves building useful, user-friendly interfaces. </p>
           <p>
             I work at <a href="http://codecademy.com">Codecademy</a> building tools to teach people
