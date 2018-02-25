@@ -23,9 +23,14 @@
   transform-origin: 100% 100%;
   overflow: auto;
 
-  span {
+  .about-me__question-mark {
     height: 2.5rem;
     display: inline-block;
+    transition: transform 0.4s;
+  }
+
+  &:hover .about-me__question-mark {
+    transform: scale(1.2)
   }
 
   &.active {

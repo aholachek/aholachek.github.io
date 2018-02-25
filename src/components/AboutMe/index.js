@@ -57,7 +57,7 @@ class AboutMe extends Component {
         tabindex="0"
         onClick={this.openModal}
       >
-        {!this.state.open ? <span className="about-me__span">?</span> : this.renderContents()}
+        {!this.state.open ? <span className="about-me__question-mark">?</span> : this.renderContents()}
       </div>
     )
   }

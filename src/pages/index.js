@@ -59,6 +59,9 @@ class IndexPage extends Component {
     function animate() {
       entryAnimation.options.shapeColors = [this.props.cssVars["--color"]]
 
+      const buttonEl = document.querySelector(".about-me__trigger-button")
+      buttonEl.style.opacity = 0
+
       const rect = this.title.getBoundingClientRect()
       const translateY = window.innerHeight / 2 - rect.height / 2 - rect.y
       const translateX = window.innerWidth / 2 - rect.width / 2 - rect.x
@@ -89,7 +92,17 @@ class IndexPage extends Component {
           scale: 0.45,
           duration: 200,
           easing: "easeInOutSine"
-        }).finished.then(() => animateInList(this.links))
+        })
+          .finished.then(() => animateInList(this.links))
+          .then(() => {
+            anime({
+              targets: buttonEl,
+              opacity: 1,
+              translateX: [80, 0],
+              delay: 700,
+              duration: 100
+            })
+          })
       }, 1250)
     }
 
