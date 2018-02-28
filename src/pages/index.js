@@ -23,18 +23,18 @@ const entryAnimation = {
   },
   show: {
     lettersAnimationOpts: {
-      duration: 600,
-      delay: (t, i) => i * 60,
+      duration: 900,
+      delay: (t, i) => i * 100 + 400,
       easing: "easeOutExpo",
       opacity: {
         value: [0, 1],
         duration: 100,
         easing: "linear"
       },
-      translateY: (t, i) => (i % 2 ? [anime.random(-350, 350), 0] : [anime.random(450, 450), 0])
+      translateY: (t, i) => (i % 2 ? [anime.random(-300, 300), 0] : [anime.random(400, 400), 0])
     },
     shapesAnimationOpts: {
-      duration: 1600,
+      duration: 1900,
       delay: (t, i) => i * 30,
       elasticity: 500,
       translateX: t => [t.dataset.x, anime.random(-450, 450) + parseFloat(t.dataset.x)],
@@ -43,7 +43,7 @@ const entryAnimation = {
       rotate: () => [0, anime.random(-16, 16)],
       opacity: [
         { value: 1, duration: 1, easing: "linear" },
-        { value: 0, duration: 150, delay: 1200, easing: "easeOutQuad" }
+        { value: 0, duration: 150, delay: 1000, easing: "easeOutQuad" }
       ]
     }
   }
@@ -90,7 +90,7 @@ class IndexPage extends Component {
           translateY: 0,
           translateX: 0,
           scale: 0.45,
-          duration: 200,
+          duration: 400,
           easing: "easeInOutSine"
         })
           .finished.then(() => animateInList(this.links))
@@ -103,7 +103,7 @@ class IndexPage extends Component {
               duration: 800
             })
           })
-      }, 1250)
+      }, 1950)
     }
 
     animate = animate.bind(this)

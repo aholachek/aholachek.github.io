@@ -94,7 +94,7 @@ class Letter {
     this.DOM.svg = svg
     svg.style.opacity = 0.4
     this.options = {
-      totalShapes: 4
+      totalShapes: 3
     }
     Object.assign(this.options, options)
     this.rect = this.DOM.el.getBoundingClientRect()
