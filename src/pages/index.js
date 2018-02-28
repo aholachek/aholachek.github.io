@@ -23,8 +23,8 @@ const entryAnimation = {
   },
   show: {
     lettersAnimationOpts: {
-      duration: 900,
-      delay: (t, i) => i * 100 + 400,
+      duration: 600,
+      delay: (t, i) => i * 50 + 400,
       easing: "easeOutExpo",
       opacity: {
         value: [0, 1],
@@ -34,7 +34,7 @@ const entryAnimation = {
       translateY: (t, i) => (i % 2 ? [anime.random(-300, 300), 0] : [anime.random(400, 400), 0])
     },
     shapesAnimationOpts: {
-      duration: 1900,
+      duration: 1700,
       delay: (t, i) => i * 30,
       elasticity: 500,
       translateX: t => [t.dataset.x, anime.random(-450, 450) + parseFloat(t.dataset.x)],
@@ -103,7 +103,7 @@ class IndexPage extends Component {
               duration: 800
             })
           })
-      }, 1950)
+      }, 1700)
     }
 
     animate = animate.bind(this)
