@@ -1,11 +1,11 @@
-@mixin page-content () {
+@mixin page-content ($max-width : 75rem) {
   padding-top: 3rem;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1rem;
   padding-right: 1rem;
   padding-bottom: 1rem;
-  max-width: 50rem;
+  max-width: $max-width;
 }
 
 @mixin heading-font () {
@@ -14,7 +14,7 @@
   font-weight: 700;
 }
 
-@mixin interesting-link ($position: 1.8rem) {
+@mixin interesting-link ($position: .8em) {
   a {
     transition: background-position 0.15s 0.1s;
     background-image: linear-gradient(

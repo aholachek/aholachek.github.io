@@ -31,7 +31,7 @@ class AboutMe extends Component {
         <div className="about-me__contents">
         <h1>Hi, thanks for visiting!</h1>
 
-          <p>I'm a front end developer who loves building useful, user-friendly interfaces. </p>
+          <p>I'm a front end developer who likes building useful, user-friendly interfaces. </p>
           <p>
             I work at <a href="http://codecademy.com">Codecademy</a> building tools to teach people
             how to code.{" "}

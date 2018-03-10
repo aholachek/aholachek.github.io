@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans:400,700");
 
+
 body {
+  position: relative;
   font-family: $base-font-family;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

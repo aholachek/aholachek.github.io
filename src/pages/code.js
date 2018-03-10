@@ -24,7 +24,7 @@ const Code = ({ animatingOut }) => {
   return (
     <div>
       <Helmet title="Alex Holachek | Code" />
-      <PresentationList title="Code" links={links} animatingOut={animatingOut} />
+      <PresentationList title="Code" links={links} animatingOut={animatingOut} simple={true} />
     </div>
   )
 }

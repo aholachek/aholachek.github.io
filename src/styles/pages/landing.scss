@@ -1,5 +1,6 @@
+
 .page--landing {
-  @include page-content();
+  @include page-content(60rem);
   padding-top: 6rem;
 }
 

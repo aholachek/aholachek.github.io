@@ -70,6 +70,11 @@ class ReactionGifGeneratorPage extends Component {
 
         <h2>The Solution: Automatic Group Detection and a Hierarchical Layout</h2>
         <p>
+          <a href="https://ui.adsabs.harvard.edu/#search/q=%20author%3A%22kurtz%2Cm%22&sort=date%20desc%2C%20bibcode%20desc/author-network" className="lead" rel="noopener noreferrer" target="_blank">
+            Check out the live version here.
+          </a>
+        </p>
+        <p>
           I wanted a visualization that could support user exploration into details like the
           zoomable node-link graph, but one which could also tell you at a glance some important
           features of the network. I started reading a bit about graph analysis and realized that

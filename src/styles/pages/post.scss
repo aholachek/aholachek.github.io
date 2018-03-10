@@ -1,5 +1,8 @@
+$max-width: 60rem;
+
 .page--post__header {
   @include page-content();
+  max-width: $max-width;
   h1 {
     font-size: 3rem;
     @media (min-width: $screen-lg) {
@@ -18,6 +21,7 @@
   padding-bottom: 4rem;
   > div {
     @include page-content();
+    max-width: $max-width;
     padding-top: 2rem;
   }
 

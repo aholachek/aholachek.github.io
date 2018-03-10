@@ -3,11 +3,12 @@ $transition-time: .5s;
 .page {
   background-color: var(--background-color);
   color: var(--color);
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
+  overflow: auto;
   z-index: 1;
 }
 

@@ -9,69 +9,107 @@
 }
 
 .page--list__content {
-  background-color: white;
-  min-height: 55vh;
   display: block;
   color: var(--darker-color);
   padding-bottom: 4rem;
-  padding-top: 1rem;
 
   > div {
     @include page-content();
     @include heading-font();
   }
 
-  ul {
-    counter-reset: list-counter;
-    margin-top: 1rem;
+  .card-grid {
+    margin: 0;
     font-size: 2.5rem;
-    padding-left: 4rem;
     @media (min-width: $screen-md) {
-      font-size: 3rem;
+      font-size: 2rem;
     }
+    display: grid;
+    grid-gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   }
 
-  img {
-    max-height: 24rem;
-    width: auto;
-    display: block;
-    margin-bottom: 5rem;
-    margin-top: 2rem;
+  .card-grid--simple {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
+
+  .card {
+    background-color: white;
     position: relative;
   }
 
-  li {
-    margin-bottom: 2.5rem;
-    position: relative;
-    &::before {
-      content: counter(list-counter);
-      counter-increment: list-counter;
-      position: absolute;
-      left: -4rem;
-    }
+  .card__description {
+    margin-bottom: 0;
+    line-height: 1.4;
+    margin-top: 1rem;
   }
 
   a {
-    transition: background-position 0.15s 0.1s;
-    background-image: linear-gradient(
-      to bottom,
-      var(--lighter-color) 0%,
-      var(--lighter-color) 100%
-    );
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: 0 2rem;
-    @media (min-width: $screen-md) {
-      background-position: 0 2.6rem;
-    }
-    &:hover {
-      cursor: pointer;
+    display: block;
+    padding: 1.5rem;
+    height: 100%;
+    .card__header > h2 {
+      display: inline;
+      transition: background-position 0.15s 0.1s;
       background-image: linear-gradient(
         to bottom,
         var(--lighter-color) 0%,
         var(--lighter-color) 100%
       );
-      background-position: 0 0;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: 0 .8em;
+    }
+    &:hover {
+      .card__header > h2 {
+        cursor: pointer;
+        background-image: linear-gradient(
+          to bottom,
+          var(--lighter-color) 0%,
+          var(--lighter-color) 100%
+        );
+        background-position: 0 0;
+      }
+    }
+  }
+
+  .card__img {
+    max-height: 17rem;
+    width: auto;
+    max-width: 100%;
+    display: block;
+    margin: 1.5rem auto 0 auto;
+  }
+
+  .card__header {
+    
+    font-size: 2.5rem;
+    h2 {
+      font-size: 2.5rem;
+    }
+  }
+
+  .card__skills {
+    color: $color-text;
+    font-weight: bold;
+    font-size: 1.6rem;
+    display:flex;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    > li {
+      margin-right: .5rem;
+    }
+  }
+
+  .card--simple {
+    a {
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 200px;
+      h2 {
+        font-size: 3rem;
+      }
     }
   }
 }
