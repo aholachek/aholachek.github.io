@@ -37,8 +37,8 @@ const entryAnimation = {
       duration: 1700,
       delay: (t, i) => i * 30,
       elasticity: 500,
-      translateX: t => [t.dataset.x, anime.random(-450, 450) + parseFloat(t.dataset.x)],
-      translateY: t => [t.dataset.y, anime.random(-450, 450) + parseFloat(t.dataset.y)],
+      translateX: t => [t.dataset.x, anime.random(-500, 500) + parseFloat(t.dataset.x)],
+      translateY: t => [t.dataset.y, anime.random(-500, 500) + parseFloat(t.dataset.y)],
       scale: () => [randomBetween(0.8, 3), randomBetween(0.5, 5)],
       rotate: () => [0, anime.random(-16, 16)],
       opacity: [
