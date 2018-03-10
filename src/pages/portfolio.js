@@ -11,7 +11,7 @@ const links = [
   {
     text: "Creating a Scorecard for Massachussetts Legislators",
     to: "/portfolio/progressiveMass",
-    skills: ["React", "Node.js", "UI Design"],
+    skills: ["React", "Node", "UI Design"],
     img: scorecardImg
   },
   {
@@ -23,13 +23,13 @@ const links = [
   {
     text: "Going (briefly) viral with a reaction gif generator",
     to: "/portfolio/reactionGifGenerator",
-    skills: ["Vue.js", "Node.js"],
+    skills: ["Vue", "Node.js"],
     img: gifImg
   },
   {
     text: "Rethinking the ADS author network visualizations",
     to: "/portfolio/adsAuthorNetworks",
-    skills: ["D3.js", "Python", "Visualization Design"],
+    skills: ["D3", "Python", "Visualization Design"],
     img: networkImg
   }
 ]
