@@ -55,3 +55,15 @@ p {
   font-weight: 400;
   color: $color-text;
 }
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  font-size: 1.3rem;
+  color: $color-text;
+  line-height: 1.5;
+  font-style: italic;
+  margin-top: 1rem;
+}

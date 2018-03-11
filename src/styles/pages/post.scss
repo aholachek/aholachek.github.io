@@ -8,7 +8,7 @@ $max-width: 60rem;
     @media (min-width: $screen-lg) {
       font-size: 5rem;
     }
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     line-height: 1.1;
   }
 }
@@ -22,7 +22,7 @@ $max-width: 60rem;
   > div {
     @include page-content();
     max-width: $max-width;
-    padding-top: 2rem;
+    padding-top: 1rem;
   }
 
   @include interesting-link();
@@ -37,7 +37,8 @@ $max-width: 60rem;
   h6 {
     color: $color-text;
     text-transform: none;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
   }
 
   h2 {
@@ -48,8 +49,9 @@ $max-width: 60rem;
     font-size: 2.4rem;
   }
 
-  img {
-    margin-top: 2rem;
+
+  figure {
     margin-bottom: 2rem;
+    margin-top: 2rem;
   }
 }
