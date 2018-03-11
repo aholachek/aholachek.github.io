@@ -60,8 +60,8 @@ class ProgressiveMassPage extends Component {
                 <b>Older interface:</b> In order to understand the spreadsheet,
                 you had to already know who your representative was, and in
                 order to understand the context of any particular vote you had
-                to follow the tiny link at the top to load the official PDF of
-                the vote proceedings. As someone new to state politics, I
+                to follow the tiny link at the top to load the full text of the bill.
+                As someone new to state politics, I
                 personally found it difficult to parse.{' '}
               </figcaption>
             </figure>
