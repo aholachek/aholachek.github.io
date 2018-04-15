@@ -57,8 +57,8 @@
       "component---src-pages-code-js-c401d15732e8d6dcf403.js.map"
     ],
     "commons": [
-      "commons-7137ce264cae510d8402.js",
-      "commons-7137ce264cae510d8402.js.map"
+      "commons-b3f8201f4ba8e146982f.js",
+      "commons-b3f8201f4ba8e146982f.js.map"
     ],
     "component---src-pages-articles-js": [
       "component---src-pages-articles-js-58795c64f453fad0f2d3.js",
@@ -81,9 +81,9 @@
       "component---src-pages-portfolio-reaction-gif-generator-index-js-e5be9c09cb2646527c38.js.map"
     ],
     "app": [
-      "app-9511b1978b4e2eb63d18.js",
+      "app-1a0f1184ce77346e1fe2.js",
       "build-js-styles.css",
-      "app-9511b1978b4e2eb63d18.js.map",
+      "app-1a0f1184ce77346e1fe2.js.map",
       "build-js-styles.css.map"
     ],
     "component---src-pages-portfolio-js": [
