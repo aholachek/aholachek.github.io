@@ -14,7 +14,10 @@ const renderSkillList = skills => (
 );
 
 const renderDescription = description => (
-  <p className="card__description">{description}</p>
+  <p
+    className="card__description"
+    dangerouslySetInnerHTML={{ __html: description }}
+  />
 );
 
 const Card = ({ skills, text, img, external, to, description, simple }) => {

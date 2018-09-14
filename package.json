@@ -17,6 +17,7 @@
     "gatsby-transformer-remark": "^1.7.30",
     "normalize.css": "^7.0.0",
     "react-custom-properties": "^1.2.0",
+    "react-flip-toolkit": "^4.0.6",
     "react-helmet": "^5.2.0",
     "react-tabs": "^2.2.1",
     "styled-components": "^3.0.2"

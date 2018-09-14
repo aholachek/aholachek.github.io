@@ -1,32 +1,40 @@
-import React, { Component } from "react"
-import PresentationList from "./../components/PresentationList"
-import Helmet from "react-helmet"
+import React, { Component } from 'react';
+import PresentationList from './../components/PresentationList';
+import Helmet from 'react-helmet';
 
 const links = [
   {
-    text: "Github",
-    to: "https://github.com/aholachek",
+    text: 'Github',
+    to: 'https://github.com/aholachek',
+    description: 'a few interesting open source libraries',
     external: true
   },
   {
-    text: "Codepen",
-    to: "https://codepen.io/aholachek",
+    text: 'Codepen',
+    to: 'https://codepen.io/aholachek',
+    description: 'Tiny front-end projects and brainstorms',
     external: true
   },
   {
-    text: "D3 bl.ocks",
-    to: "https://bl.ocks.org/aholachek",
+    text: 'D3 bl.ocks',
+    to: 'https://bl.ocks.org/aholachek',
+    description: 'Experiments with visualization techniques',
     external: true
   }
-]
+];
 
 const Code = ({ animatingOut }) => {
   return (
     <div>
       <Helmet title="Alex Holachek | Code" />
-      <PresentationList title="Code" links={links} animatingOut={animatingOut} simple={true} />
+      <PresentationList
+        title="Code"
+        links={links}
+        animatingOut={animatingOut}
+        simple={true}
+      />
     </div>
-  )
-}
+  );
+};
 
-export default Code
+export default Code;

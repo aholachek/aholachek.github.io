@@ -16,16 +16,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  align-items: center;
   font-weight: bold;
   text-transform: lowercase;
   border-radius: 100px;
   background-color: var(--color);
   color: var(--background-color);
   border: 0;
-  font-family: "Josefin Sans";
+  @include heading-font();
   cursor: pointer;
-  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out, width .5s ease-in-out, height .5s ease-in-out, border-radius .5s ease-in-out, right .5s ease-in-out, bottom .5s ease-in-out;
+  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out, border-radius .5s;
   outline: 0;
   transform-origin: 100% 100%;
   overflow: hidden;
@@ -90,10 +89,11 @@
   text-transform: none;
 
   h1 {
+    text-align: center;
     font-size: 2.8rem;
     margin-top: 4rem;
     line-height: 1.1;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     animation: fadeInDown 0.5s forwards;
     animation-delay: 400ms;
     opacity: 0;
@@ -152,5 +152,15 @@
     svg {
       transform: scale(1.2);
     }
+  }
+}
+
+.about-me__links {
+  display:flex;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+  > div {
+    margin-right: 2rem;
   }
 }

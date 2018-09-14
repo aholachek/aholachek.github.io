@@ -12,10 +12,6 @@ function randomBetween(minValue, maxValue, precision = 2) {
   )
 }
 
-function getRandomFromArray(arr) {
-  return arr[Math.floor(Math.random() * arr.length)]
-}
-
 const entryAnimation = {
   options: {
     shapeColors: [],
