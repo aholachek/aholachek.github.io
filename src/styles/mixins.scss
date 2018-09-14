@@ -6,10 +6,18 @@
   padding-right: 1rem;
   padding-bottom: 1rem;
   max-width: $max-width;
+  @media (min-width: $screen-sm) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  @media (min-width: $screen-md) {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
 }
 
 @mixin heading-font () {
-  font-family: "Josefin Sans";
+  font-family: $base-font-family;
   text-transform: lowercase;
   font-weight: 700;
 }

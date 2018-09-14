@@ -27,16 +27,35 @@
   transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out, border-radius .5s;
   outline: 0;
   transform-origin: 100% 100%;
-  overflow: hidden;
 
   .about-me__question-mark {
     height: 2.5rem;
     display: inline-block;
-    transition: transform 0.4s;
+    transition: transform 0.4s, opacity .25s;
+    position: relative;
+    top: .4rem;
   }
 
-  &:hover .about-me__question-mark {
-    transform: scale(1.2)
+  &::before {
+    content: "";
+    height: 6rem;
+    width: 6rem;
+    position: absolute;
+    border-radius: 100px;
+    background-color: var(--color);
+    opacity: 0;
+    z-index: 0;
+  }
+
+  &:focus {
+    &::before{
+      opacity: .5;
+    }
+  }
+
+
+  &:hover .about-me__question-mark, &:focus .about-me__question-mark {
+    transform: scale(1.25);
   }
 
   &.active {
@@ -47,6 +66,10 @@
     right: 0;
     cursor: default;
     overflow-y: auto;
+
+    .about-me__question-mark {
+      opacity: 0;
+    }
   }
 }
 
@@ -116,7 +139,7 @@
   font-weight: normal;
   opacity: 0;
   animation: fadeInDown 0.5s forwards;
-  animation-delay: 800ms;
+  animation-delay: 700ms;
   p {
     font-size: 1.5rem;
     margin-bottom: 1rem;
@@ -129,6 +152,8 @@
 
 .about-me__close-btn {
   outline: 0;
+  border-radius: 4px;
+  padding-top: .3rem;
   z-index:1;
   position: absolute;
   right: 2rem;
@@ -152,6 +177,9 @@
     svg {
       transform: scale(1.2);
     }
+  }
+  &:focus:not(:active) {
+    box-shadow: 0 0 0 4px var(--background-color);
   }
 }
 

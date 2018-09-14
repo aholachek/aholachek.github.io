@@ -5,6 +5,8 @@ import anime from "animejs"
 import animateInList from "./../utilities/animate-in-list"
 import Word from "../utilities/WordFx"
 import icons from "../utilities/icons"
+import { Flipper, Flipped } from 'react-flip-toolkit'
+
 
 function randomBetween(minValue, maxValue, precision = 2) {
   return parseFloat(
