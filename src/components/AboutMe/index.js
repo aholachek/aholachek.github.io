@@ -106,6 +106,7 @@ class AboutMe extends Component {
               this.state.open ? 'active' : ''
             }`}
             onClick={this.openModal}
+            style={{ opacity: this.props.initialHidden ? 0 : 1 }}
           >
             <div>
               <span className="about-me__question-mark">?</span>

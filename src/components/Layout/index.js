@@ -83,7 +83,7 @@ class Layout extends React.Component {
             )}
             <main>{currentComponent}</main>
           </div>
-          <AboutMe />
+          <AboutMe initialHidden={this.props.location.pathname === '/'} />
         </CustomProperties>
       </div>
     );
