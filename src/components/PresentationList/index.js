@@ -17,11 +17,15 @@ class PresentationList extends Component {
     const content = this.el.querySelector('.page--list__content');
     anime({
       targets: content.querySelectorAll('.card'),
-      opacity: 1,
-      translateY: [-30, 0],
+      opacity: {
+        value: 1,
+        duration: 300,
+        easing: 'easeInSine'
+      },
+      translateY: [50, 0],
       delay: (x, i) => i * 100 + 300,
       duration: 1000,
-      elasticity: 250
+      elasticity: 500
     });
   }
 

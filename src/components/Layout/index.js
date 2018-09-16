@@ -28,7 +28,7 @@ class Layout extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.location.pathname !== this.props.location.pathname) {
-      const newThemes = colorThemes.filter(t => t !== this._theme);
+      const newThemes = colorThemes.filter(t => t !== this.state.theme);
       this.setState({
         prevPage: {
           pathname: prevProps.location.pathname,
