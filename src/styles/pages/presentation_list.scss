@@ -1,3 +1,9 @@
+// hack
+.page--list {
+  background-color: var(--background-color);
+  color: var(--color);
+}
+
 .page--list__header {
   @include page-content();
   h1 {

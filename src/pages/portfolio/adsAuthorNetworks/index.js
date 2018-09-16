@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import Post from '../../../components/Post';
-
 import adsLabsNetwork from './assets/adslabs-network.png';
 import oldNetwork from './assets/old-network.png';
 import newNetworkVideo from './assets/network_again.mp4';
@@ -52,14 +51,8 @@ class ReactionGifGeneratorPage extends Component {
         <h2>My First Redesign: Return of the Hairball</h2>
 
         <figure>
-        <img
-          src={oldNetwork}
-          alt="my first redesign of the network"
-        />
-        <figcaption>
-          Redesign attempt #1
-        </figcaption>
-
+          <img src={oldNetwork} alt="my first redesign of the network" />
+          <figcaption>Redesign attempt #1</figcaption>
         </figure>
         <p>
           As one of my first data visualization tasks ever, I tried to redo the

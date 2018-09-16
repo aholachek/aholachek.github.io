@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Fragment } from 'react';
 import PresentationList from './../components/PresentationList';
 import Helmet from 'react-helmet';
 
@@ -25,7 +25,7 @@ const links = [
 
 const Code = ({ animatingOut }) => {
   return (
-    <div>
+    <Fragment>
       <Helmet title="Alex Holachek | Code" />
       <PresentationList
         title="Code"
@@ -33,8 +33,8 @@ const Code = ({ animatingOut }) => {
         animatingOut={animatingOut}
         simple={true}
       />
-    </div>
+    </Fragment>
   );
 };
 
-export default Code;
+export default Code

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Fragment } from 'react';
 import PresentationList from './../components/PresentationList';
 import Helmet from 'react-helmet';
 
@@ -42,14 +42,14 @@ const links = [
 ];
 const Articles = ({ animatingOut }) => {
   return (
-    <div>
+    <Fragment>
       <Helmet title="Alex Holachek | Articles" />
       <PresentationList
         title="Articles"
         links={links}
         animatingOut={animatingOut}
       />
-    </div>
+    </Fragment>
   );
 };
 

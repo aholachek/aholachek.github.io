@@ -1,15 +1,15 @@
-import React from "react"
-import Link from "gatsby-link"
+import React from 'react';
+import Link from 'gatsby-link';
 
-const links = ["code", "portfolio", "articles"]
+const links = ['code', 'portfolio', 'articles'];
 function renderLinks(path) {
-  return links.filter(l => !new RegExp(`${l}/$`).test(path)).map(l => {
+  return links.filter(l => !new RegExp(`^/?${l}/?$`).test(path)).map(l => {
     return (
       <div>
         <Link to={`/${l}`}>{l}</Link>
       </div>
-    )
-  })
+    );
+  });
 }
 
 const Header = ({ path }) => {
@@ -35,7 +35,7 @@ const Header = ({ path }) => {
       </div>
       <div className="links">{renderLinks(path)}</div>
     </nav>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
