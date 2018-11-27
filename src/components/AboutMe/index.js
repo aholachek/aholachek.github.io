@@ -60,7 +60,7 @@ class AboutMe extends Component {
               </a>
             </div>
             <div>
-              <a href="https://www.twitter.com/alexholachek">
+              <a href="https://www.twitter.com/alex_holachek">
                 <FontAwesomeIcon icon={faTwitter} fixedWidth title="Twitter" />
               </a>
             </div>
