@@ -26,7 +26,7 @@
     "react": "^16.5.1",
     "react-custom-properties": "^1.2.0",
     "react-dom": "^16.5.1",
-    "react-flip-toolkit": "^4.0.6",
+    "react-flip-toolkit": "^6.3.0",
     "react-helmet": "^5.2.0",
     "react-tabs": "^2.2.1"
   },

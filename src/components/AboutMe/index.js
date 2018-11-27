@@ -17,7 +17,7 @@ class AboutMe extends Component {
     this.setState({ open: true });
   };
   closeModal = e => {
-    this.setState({ open: false });
+    this.setState({ open: false, closing: true });
     e.stopPropagation();
   };
 
@@ -38,29 +38,18 @@ class AboutMe extends Component {
                 <FontAwesomeIcon
                   icon={faLinkedin}
                   fixedWidth
-                  size="md"
                   title="LinkedIn"
                 />
               </a>
             </div>
             <div>
               <a href="https://www.github.com/aholachek">
-                <FontAwesomeIcon
-                  icon={faGithub}
-                  fixedWidth
-                  size="md"
-                  title="Github"
-                />
+                <FontAwesomeIcon icon={faGithub} fixedWidth title="Github" />
               </a>
             </div>
             <div>
               <a href="https://www.twitter.com/alexholachek">
-                <FontAwesomeIcon
-                  icon={faTwitter}
-                  fixedWidth
-                  size="md"
-                  title="Twitter"
-                />
+                <FontAwesomeIcon icon={faTwitter} fixedWidth title="Twitter" />
               </a>
             </div>
           </div>
@@ -92,6 +81,7 @@ class AboutMe extends Component {
   };
 
   render() {
+    const ButtonEl = this.state.open ? 'div' : 'button';
     return (
       <Flipper flipKey={this.state.open}>
         <Flipped
@@ -101,18 +91,22 @@ class AboutMe extends Component {
           }}
           onComplete={this.onAnimationComplete}
         >
-          <button
+          <ButtonEl
             className={`about-me__trigger-button ${
               this.state.open ? 'active' : ''
             }`}
             onClick={this.openModal}
-            style={{ opacity: this.props.initialHidden ? 0 : 1 }}
           >
             <div>
-              <span className="about-me__question-mark">?</span>
+              <span
+                style={{ opacity: this.state.closing ? 0 : 1 }}
+                className="about-me__question-mark"
+              >
+                ?
+              </span>
               {this.state.open && this.renderContents()}
             </div>
-          </button>
+          </ButtonEl>
         </Flipped>
       </Flipper>
     );

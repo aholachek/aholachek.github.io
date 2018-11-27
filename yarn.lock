@@ -8865,14 +8865,12 @@ react-error-overlay@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-3.0.0.tgz#c2bc8f4d91f1375b3dad6d75265d51cd5eeaf655"
 
-react-flip-toolkit@^4.0.6:
-  version "4.0.6"
-  resolved "https://registry.yarnpkg.com/react-flip-toolkit/-/react-flip-toolkit-4.0.6.tgz#d57d9b6ca1d641be10fe36d3796577e1fde74a14"
+react-flip-toolkit@^6.3.0:
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/react-flip-toolkit/-/react-flip-toolkit-6.3.0.tgz#6cd769034c277f302495ff80413cb4bce980985c"
+  integrity sha512-qJc9Bcq7g1nsHTReVXo1bFNMx/S47uzOw1auKXxsxk5b9k67cjh446/qca/5osT88OMYCvD40xBdFEjSVABGSw==
   dependencies:
-    object-assign "^4.1.1"
-    prop-types "^15.6.2"
     rematrix "^0.2.2"
-    wobble "^1.5.0"
 
 react-helmet@^5.2.0:
   version "5.2.0"
@@ -11384,10 +11382,6 @@ widest-line@^2.0.0:
 window-size@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/window-size/-/window-size-0.1.4.tgz#f8e1aa1ee5a53ec5bf151ffa09742a6ad7697876"
-
-wobble@^1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/wobble/-/wobble-1.5.0.tgz#5192d6681642ca22e4e133408628b99e9a7d1559"
 
 wordwrap@~1.0.0:
   version "1.0.0"
