@@ -14,5 +14,5 @@ export default [
   { darker: '#3703e1', lighter: '#cec7b7', background: 'lighter' },
   { darker: '#170c90', lighter: '#5bc586', background: 'darker' },
   { darker: '#4744ea', lighter: '#fbdecb', background: 'darker' },
-  { darker: '#6e4ffa', lighter: '#eafe9b', background: 'darker' },
+  { darker: '#6e4ffa', lighter: '#eafe9b', background: 'darker' }
 ]

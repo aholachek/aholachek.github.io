@@ -12,26 +12,26 @@ const links = [
     text: 'Creating a Scorecard for Massachussetts Legislators',
     to: '/portfolio/progressiveMass',
     skills: ['React', 'Node', 'UI Design'],
-    img: scorecardImg,
+    img: scorecardImg
   },
   {
     text: 'Redesigning the Astrophysics Data System',
     to: '/portfolio/redesigningADS',
     skills: ['React', 'Redux', 'UI Design'],
-    img: bbbImg,
+    img: bbbImg
   },
   {
     text: 'Going (briefly) viral with a reaction gif generator',
     to: '/portfolio/reactionGifGenerator',
     skills: ['Vue', 'Node.js'],
-    img: gifImg,
+    img: gifImg
   },
   {
     text: 'Rethinking the ADS author network visualizations',
     to: '/portfolio/adsAuthorNetworks',
     skills: ['D3', 'Python', 'Visualization Design'],
-    img: networkImg,
-  },
+    img: networkImg
+  }
 ]
 const Portfolio = ({ animatingOut }) => {
   return (

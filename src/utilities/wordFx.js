@@ -52,10 +52,10 @@ class Shape {
         '#8bc34a',
         '#1e1e21',
         '#e24e81',
-        '#e0cd24',
+        '#e0cd24'
       ],
       shapeFill: true,
-      shapeStrokeWidth: 1,
+      shapeStrokeWidth: 1
     }
     Object.assign(this.options, options)
     this.type = type || this.options.shapeTypes[0]
@@ -112,7 +112,7 @@ class Letter {
     this.DOM.svg = svg
     svg.style.opacity = 0.4
     this.options = {
-      totalShapes: 3,
+      totalShapes: 3
     }
     Object.assign(this.options, options)
     this.rect = this.DOM.el.getBoundingClientRect()
@@ -147,7 +147,7 @@ class Word {
     this.DOM = {}
     this.DOM.el = el
     this.options = {
-      shapesOnTop: false,
+      shapesOnTop: false
     }
     Object.assign(this.options, options)
     this.init()

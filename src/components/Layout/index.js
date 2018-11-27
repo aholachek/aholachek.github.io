@@ -16,14 +16,14 @@ const getCSSVars = (d = {}) => {
     '--color': d.background === 'lighter' ? d.darker : d.lighter,
     '--background-color': d.background === 'lighter' ? d.lighter : d.darker,
     '--darker-color': d.darker,
-    '--lighter-color': d.lighter,
+    '--lighter-color': d.lighter
   }
 }
 
 class Layout extends React.Component {
   state = {
     prevPage: {},
-    theme: colorThemes[Math.floor(Math.random() * colorThemes.length)],
+    theme: colorThemes[Math.floor(Math.random() * colorThemes.length)]
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -33,13 +33,13 @@ class Layout extends React.Component {
         prevPage: {
           pathname: prevProps.location.pathname,
           children: prevProps.children,
-          theme: this.state.theme,
+          theme: this.state.theme
         },
-        theme: newThemes[Math.floor(Math.random() * newThemes.length)],
+        theme: newThemes[Math.floor(Math.random() * newThemes.length)]
       })
       setTimeout(() => {
         this.setState({
-          prevPage: {},
+          prevPage: {}
         })
       }, pageTransitionTime)
     }
@@ -48,14 +48,14 @@ class Layout extends React.Component {
   render() {
     const currentComponent = React.cloneElement(this.props.children, {
       cssVars: getCSSVars(this.state.theme),
-      animatingIn: this.state.prevPage,
+      animatingIn: this.state.prevPage
     })
 
     const prevComponent =
       this.state.prevPage.children &&
       React.cloneElement(this.state.prevPage.children, {
         cssVars: getCSSVars(this.state.prevPage.theme),
-        animatingOut: true,
+        animatingOut: true
       })
 
     return (
@@ -83,7 +83,7 @@ class Layout extends React.Component {
             )}
             <main>{currentComponent}</main>
           </div>
-          <AboutMe />
+          <AboutMe initialHidden={this.props.location.pathname === '/'} />
         </CustomProperties>
       </div>
     )

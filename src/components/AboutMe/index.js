@@ -5,20 +5,32 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faLinkedin,
   faTwitter,
-  faGithub,
+  faGithub
 } from '@fortawesome/free-brands-svg-icons'
 
 class AboutMe extends Component {
   state = {
-    open: false,
+    open: false
   }
 
   openModal = () => {
-    this.setState({ open: true })
+    this.setState({ open: true, buttonHidden: false })
   }
   closeModal = e => {
-    this.setState({ open: false, closing: true })
     e.stopPropagation()
+    this.setState({ open: false, closing: true })
+    setTimeout(() => {
+      this.setState({ closing: false })
+    }, 400)
+  }
+
+  componentDidMount() {
+    // this is just a hacky way to close
+    // the button on the first view of the landing page
+    // so it can pop in
+    if (this.props.initialHidden) {
+      this.setState({ buttonHidden: true })
+    }
   }
 
   renderContents = () => {
@@ -96,6 +108,9 @@ class AboutMe extends Component {
               this.state.open ? 'active' : ''
             }`}
             onClick={this.openModal}
+            style={{
+              opacity: this.state.buttonHidden ? 0 : 1
+            }}
           >
             <div>
               <span

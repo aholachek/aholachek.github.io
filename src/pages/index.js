@@ -19,7 +19,7 @@ function randomBetween(minValue, maxValue, precision = 2) {
 const entryAnimation = {
   options: {
     shapeColors: [],
-    shapesOnTop: false,
+    shapesOnTop: false
   },
   show: {
     lettersAnimationOpts: {
@@ -29,10 +29,10 @@ const entryAnimation = {
       opacity: {
         value: [0, 1],
         duration: 100,
-        easing: 'linear',
+        easing: 'linear'
       },
       translateY: (t, i) =>
-        i % 2 ? [anime.random(-300, 300), 0] : [anime.random(400, 400), 0],
+        i % 2 ? [anime.random(-300, 300), 0] : [anime.random(400, 400), 0]
     },
     shapesAnimationOpts: {
       duration: 1700,
@@ -40,25 +40,25 @@ const entryAnimation = {
       elasticity: 500,
       translateX: t => [
         t.dataset.x,
-        anime.random(-500, 500) + parseFloat(t.dataset.x),
+        anime.random(-500, 500) + parseFloat(t.dataset.x)
       ],
       translateY: t => [
         t.dataset.y,
-        anime.random(-500, 500) + parseFloat(t.dataset.y),
+        anime.random(-500, 500) + parseFloat(t.dataset.y)
       ],
       scale: () => [randomBetween(0.8, 3), randomBetween(0.5, 5)],
       rotate: () => [0, anime.random(-16, 16)],
       opacity: [
         { value: 1, duration: 1, easing: 'linear' },
-        { value: 0, duration: 150, delay: 1000, easing: 'easeOutQuad' },
-      ],
-    },
-  },
+        { value: 0, duration: 150, delay: 1000, easing: 'easeOutQuad' }
+      ]
+    }
+  }
 }
 
 class IndexPage extends Component {
   state = {
-    first: true,
+    first: true
   }
   componentDidMount() {
     if (this.props.animatingOut || typeof window === 'undefined') return
@@ -79,12 +79,12 @@ class IndexPage extends Component {
           targets: this.title,
           translateY,
           translateX,
-          duration: 1,
+          duration: 1
         })
         .add({
           targets: this.title,
           duration: 1,
-          opacity: 1,
+          opacity: 1
         })
         .finished.then(() => {
           const title = new Word(this.title, entryAnimation.options)
@@ -98,7 +98,7 @@ class IndexPage extends Component {
           translateX: 0,
           scale: 0.45,
           duration: 400,
-          easing: 'easeInOutSine',
+          easing: 'easeInOutSine'
         })
           .finished.then(() => animateInList(this.links))
           .then(() => {
@@ -107,7 +107,7 @@ class IndexPage extends Component {
               opacity: 1,
               translateY: [60, 0],
               delay: 1000,
-              duration: 800,
+              duration: 800
             })
           })
       }, 1700)

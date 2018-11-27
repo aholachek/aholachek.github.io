@@ -5,7 +5,7 @@ import anime from 'animejs'
 class Post extends Component {
   static propTypes = {
     children: PropTypes.node,
-    title: PropTypes.string,
+    title: PropTypes.string
   }
 
   componentDidMount() {
@@ -21,7 +21,7 @@ class Post extends Component {
         targets: content,
         translateY: ['50vh', 0],
         elasticity: 50,
-        duration: 1200,
+        duration: 1200
       })
       .add({
         targets: content.querySelectorAll('li'),
@@ -29,7 +29,7 @@ class Post extends Component {
         delay: (x, i) => i * 200,
         duration: 250,
         easing: 'easeInSine',
-        offset: '-=100',
+        offset: '-=100'
       })
   }
 

@@ -7,7 +7,7 @@ class PresentationList extends Component {
   static propTypes = {
     title: PropTypes.string,
     links: PropTypes.array,
-    animatingOut: PropTypes.bool,
+    animatingOut: PropTypes.bool
   }
 
   state = {}
@@ -20,12 +20,12 @@ class PresentationList extends Component {
       opacity: {
         value: 1,
         duration: 300,
-        easing: 'easeInSine',
+        easing: 'easeInSine'
       },
       translateY: [50, 0],
       delay: (x, i) => i * 100 + 300,
       duration: 1000,
-      elasticity: 500,
+      elasticity: 500
     })
   }
 
