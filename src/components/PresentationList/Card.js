@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Link from 'gatsby-link'
 
 const renderSkillList = skills => (
   <ul className="card__skills">
@@ -11,14 +11,14 @@ const renderSkillList = skills => (
       </li>
     ))}
   </ul>
-);
+)
 
 const renderDescription = description => (
   <p
     className="card__description"
     dangerouslySetInnerHTML={{ __html: description }}
   />
-);
+)
 
 const Card = ({ skills, text, img, external, to, description, simple }) => {
   const content = (
@@ -30,7 +30,7 @@ const Card = ({ skills, text, img, external, to, description, simple }) => {
       </div>
       {!!img && <img className="card__img" src={img} />}
     </div>
-  );
+  )
   return (
     <li
       style={{ opacity: 0 }}
@@ -39,10 +39,10 @@ const Card = ({ skills, text, img, external, to, description, simple }) => {
     >
       {external ? <a href={to}>{content}</a> : <Link to={to}>{content}</Link>}
     </li>
-  );
-};
+  )
+}
 
-Card.defaultProps = {};
-Card.propTypes = {};
+Card.defaultProps = {}
+Card.propTypes = {}
 
-export default Card;
+export default Card

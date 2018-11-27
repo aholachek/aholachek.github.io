@@ -1,4 +1,4 @@
-import anime from "animejs"
+import anime from 'animejs'
 
 export default function animateInList(containerEl, delay = 0) {
   setTimeout(() => {
@@ -7,7 +7,7 @@ export default function animateInList(containerEl, delay = 0) {
       easing: 'easeOutExpo',
       opacity: [0, 1],
       delay: (x, i) => i * 250,
-      duration: 1000
+      duration: 1000,
     })
   }, delay)
 }

@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
-import Post from '../../../components/Post';
-import adsLabsNetwork from './assets/adslabs-network.png';
-import oldNetwork from './assets/old-network.png';
-import newNetworkVideo from './assets/network_again.mp4';
+import Post from '../../../components/Post'
+import adsLabsNetwork from './assets/adslabs-network.png'
+import oldNetwork from './assets/old-network.png'
+import newNetworkVideo from './assets/network_again.mp4'
 
 class ReactionGifGeneratorPage extends Component {
   render() {
@@ -124,8 +124,8 @@ class ReactionGifGeneratorPage extends Component {
         </p>
         <video src={newNetworkVideo} autoplay controls />
       </Post>
-    );
+    )
   }
 }
 
-export default ReactionGifGeneratorPage;
+export default ReactionGifGeneratorPage

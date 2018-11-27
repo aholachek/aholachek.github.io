@@ -1,6 +1,6 @@
-import anime from "animejs"
-import charming from "charming"
-import icons from "./icons"
+import anime from 'animejs'
+import charming from 'charming'
+import icons from './icons'
 
 /**
  * wordFx.js
@@ -33,7 +33,10 @@ function debounce(func, wait, immediate) {
 // From http://snipplr.com/view/37687/random-number-float-generator/
 function randomBetween(minValue, maxValue, precision = 2) {
   return parseFloat(
-    Math.min(minValue + Math.random() * (maxValue - minValue), maxValue).toFixed(precision)
+    Math.min(
+      minValue + Math.random() * (maxValue - minValue),
+      maxValue
+    ).toFixed(precision)
   )
 }
 
@@ -41,37 +44,52 @@ class Shape {
   constructor(type, letterRect, options) {
     this.DOM = {}
     this.options = {
-      shapeTypes: ["circle", "rect", "polygon"],
-      shapeColors: ["#e07272", "#0805b5", "#49c6ff", "#8bc34a", "#1e1e21", "#e24e81", "#e0cd24"],
+      shapeTypes: ['circle', 'rect', 'polygon'],
+      shapeColors: [
+        '#e07272',
+        '#0805b5',
+        '#49c6ff',
+        '#8bc34a',
+        '#1e1e21',
+        '#e24e81',
+        '#e0cd24',
+      ],
       shapeFill: true,
-      shapeStrokeWidth: 1
+      shapeStrokeWidth: 1,
     }
     Object.assign(this.options, options)
     this.type = type || this.options.shapeTypes[0]
-    if (this.type !== "random" && !this.options.types.includes(this.type)) return
-    if (this.type === "random")
-      this.type = this.options.shapeTypes[randomBetween(0, this.options.shapeTypes.length - 1, 0)]
+    if (this.type !== 'random' && !this.options.types.includes(this.type))
+      return
+    if (this.type === 'random')
+      this.type = this.options.shapeTypes[
+        randomBetween(0, this.options.shapeTypes.length - 1, 0)
+      ]
     this.letterRect = letterRect
     this.init()
   }
   init() {
-    this.DOM.el = document.createElementNS("http://www.w3.org/2000/svg", "path")
+    this.DOM.el = document.createElementNS('http://www.w3.org/2000/svg', 'path')
     const d = icons[Math.floor(randomBetween(0, icons.length))]
-    this.DOM.el.setAttribute("d", d)
+    this.DOM.el.setAttribute('d', d)
     this.DOM.el.style.opacity = 0
     this.configureShape()
 
     if (this.options.shapeFill) {
       this.DOM.el.setAttribute(
-        "fill",
-        this.options.shapeColors[randomBetween(0, this.options.shapeColors.length - 1, 0)]
+        'fill',
+        this.options.shapeColors[
+          randomBetween(0, this.options.shapeColors.length - 1, 0)
+        ]
       )
     } else {
-      this.DOM.el.setAttribute("fill", "none")
-      this.DOM.el.setAttribute("stroke-width", this.options.shapeStrokeWidth)
+      this.DOM.el.setAttribute('fill', 'none')
+      this.DOM.el.setAttribute('stroke-width', this.options.shapeStrokeWidth)
       this.DOM.el.setAttribute(
-        "stroke",
-        this.options.shapeColors[randomBetween(0, this.options.shapeColors.length - 1, 0)]
+        'stroke',
+        this.options.shapeColors[
+          randomBetween(0, this.options.shapeColors.length - 1, 0)
+        ]
       )
     }
   }
@@ -94,7 +112,7 @@ class Letter {
     this.DOM.svg = svg
     svg.style.opacity = 0.4
     this.options = {
-      totalShapes: 3
+      totalShapes: 3,
     }
     Object.assign(this.options, options)
     this.rect = this.DOM.el.getBoundingClientRect()
@@ -105,14 +123,14 @@ class Letter {
   init() {
     this.shapes = []
     for (let i = 0; i <= this.totalShapes - 1; ++i) {
-      const shape = new Shape("random", this.rect, this.options)
+      const shape = new Shape('random', this.rect, this.options)
       this.shapes.push(shape)
       this.DOM.svg.appendChild(shape.DOM.el)
     }
   }
   initEvents() {
     window.addEventListener(
-      "resize",
+      'resize',
       debounce(() => {
         this.rect = this.DOM.el.getBoundingClientRect()
         for (let i = 0; i <= this.totalShapes - 1; ++i) {
@@ -129,7 +147,7 @@ class Word {
     this.DOM = {}
     this.DOM.el = el
     this.options = {
-      shapesOnTop: false
+      shapesOnTop: false,
     }
     Object.assign(this.options, options)
     this.init()
@@ -139,17 +157,20 @@ class Word {
     charming(this.DOM.el)
 
     this.letters = []
-    Array.from(this.DOM.el.querySelectorAll("span")).forEach(letter =>
+    Array.from(this.DOM.el.querySelectorAll('span')).forEach(letter =>
       this.letters.push(new Letter(letter, this.DOM.svg, this.options))
     )
   }
   createSVG() {
     this.winsize = { width: window.innerWidth, height: window.innerHeight }
-    this.DOM.svg = document.createElementNS("http://www.w3.org/2000/svg", "svg")
-    this.DOM.svg.setAttribute("class", "shapes")
-    this.DOM.svg.setAttribute("width", `${this.winsize.width}px`)
-    this.DOM.svg.setAttribute("height", `${this.winsize.width}px`)
-    this.DOM.svg.setAttribute("viewbox", `0 0 ${this.winsize.width} ${this.winsize.height}`)
+    this.DOM.svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+    this.DOM.svg.setAttribute('class', 'shapes')
+    this.DOM.svg.setAttribute('width', `${this.winsize.width}px`)
+    this.DOM.svg.setAttribute('height', `${this.winsize.width}px`)
+    this.DOM.svg.setAttribute(
+      'viewbox',
+      `0 0 ${this.winsize.width} ${this.winsize.height}`
+    )
     if (this.options.shapesOnTop) {
       this.DOM.el.parentNode.insertBefore(this.DOM.svg, this.DOM.el.nextSibling)
     } else {
@@ -157,16 +178,16 @@ class Word {
     }
   }
   show(config) {
-    return this.toggle("show", config)
+    return this.toggle('show', config)
   }
   hide(config) {
-    return this.toggle("hide", config)
+    return this.toggle('hide', config)
   }
-  toggle(action = "show", config) {
+  toggle(action = 'show', config) {
     return new Promise((resolve, reject) => {
       const toggleNow = () => {
         for (let i = 0, len = this.letters.length; i <= len - 1; ++i) {
-          this.letters[i].DOM.el.style.opacity = action === "show" ? 1 : 0
+          this.letters[i].DOM.el.style.opacity = action === 'show' ? 1 : 0
         }
         resolve()
       }
@@ -178,7 +199,9 @@ class Word {
             setTimeout(
               (function(letter) {
                 return () => {
-                  config.shapesAnimationOpts.targets = letter.shapes.map(shape => shape.DOM.el)
+                  config.shapesAnimationOpts.targets = letter.shapes.map(
+                    shape => shape.DOM.el
+                  )
                   anime.remove(config.shapesAnimationOpts.targets)
                   anime(config.shapesAnimationOpts)
                 }
@@ -190,11 +213,17 @@ class Word {
           }
         }
         if (config.lettersAnimationOpts) {
-          config.lettersAnimationOpts.targets = this.letters.map(letter => letter.DOM.el)
+          config.lettersAnimationOpts.targets = this.letters.map(
+            letter => letter.DOM.el
+          )
           config.lettersAnimationOpts.complete = () => {
-            if (action === "hide") {
-              for (let i = 0, len = config.lettersAnimationOpts.targets.length; i <= len - 1; ++i) {
-                config.lettersAnimationOpts.targets[i].style.transform = "none"
+            if (action === 'hide') {
+              for (
+                let i = 0, len = config.lettersAnimationOpts.targets.length;
+                i <= len - 1;
+                ++i
+              ) {
+                config.lettersAnimationOpts.targets[i].style.transform = 'none'
               }
             }
             resolve()

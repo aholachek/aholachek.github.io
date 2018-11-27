@@ -1,27 +1,27 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import anime from 'animejs';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import anime from 'animejs'
 
 class Post extends Component {
   static propTypes = {
     children: PropTypes.node,
-    title: PropTypes.string
-  };
+    title: PropTypes.string,
+  }
 
   componentDidMount() {
-    if (this.props.animatingOut) return;
-    const content = this.el.querySelector('.page--post__content');
+    if (this.props.animatingOut) return
+    const content = this.el.querySelector('.page--post__content')
     anime
       .timeline()
       .add({
         delay: 500,
         begin: () => {
-          content.style.display = 'block';
+          content.style.display = 'block'
         },
         targets: content,
         translateY: ['50vh', 0],
         elasticity: 50,
-        duration: 1200
+        duration: 1200,
       })
       .add({
         targets: content.querySelectorAll('li'),
@@ -29,12 +29,12 @@ class Post extends Component {
         delay: (x, i) => i * 200,
         duration: 250,
         easing: 'easeInSine',
-        offset: '-=100'
-      });
+        offset: '-=100',
+      })
   }
 
   render() {
-    const { title, children } = this.props;
+    const { title, children } = this.props
     return (
       <div className="page--post" ref={el => (this.el = el)}>
         <div>
@@ -46,8 +46,8 @@ class Post extends Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default Post;
+export default Post

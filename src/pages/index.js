@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import Link from 'gatsby-link';
-import PropTypes from 'prop-types';
-import anime from 'animejs';
-import animateInList from './../utilities/animate-in-list';
-import Word from '../utilities/WordFx';
-import icons from '../utilities/icons';
-import { Flipper, Flipped } from 'react-flip-toolkit';
+import React, { Component } from 'react'
+import Link from 'gatsby-link'
+import PropTypes from 'prop-types'
+import anime from 'animejs'
+import animateInList from './../utilities/animate-in-list'
+import Word from '../utilities/WordFx'
+import icons from '../utilities/icons'
+import { Flipper, Flipped } from 'react-flip-toolkit'
 
 function randomBetween(minValue, maxValue, precision = 2) {
   return parseFloat(
@@ -13,13 +13,13 @@ function randomBetween(minValue, maxValue, precision = 2) {
       minValue + Math.random() * (maxValue - minValue),
       maxValue
     ).toFixed(precision)
-  );
+  )
 }
 
 const entryAnimation = {
   options: {
     shapeColors: [],
-    shapesOnTop: false
+    shapesOnTop: false,
   },
   show: {
     lettersAnimationOpts: {
@@ -29,10 +29,10 @@ const entryAnimation = {
       opacity: {
         value: [0, 1],
         duration: 100,
-        easing: 'linear'
+        easing: 'linear',
       },
       translateY: (t, i) =>
-        i % 2 ? [anime.random(-300, 300), 0] : [anime.random(400, 400), 0]
+        i % 2 ? [anime.random(-300, 300), 0] : [anime.random(400, 400), 0],
     },
     shapesAnimationOpts: {
       duration: 1700,
@@ -40,38 +40,38 @@ const entryAnimation = {
       elasticity: 500,
       translateX: t => [
         t.dataset.x,
-        anime.random(-500, 500) + parseFloat(t.dataset.x)
+        anime.random(-500, 500) + parseFloat(t.dataset.x),
       ],
       translateY: t => [
         t.dataset.y,
-        anime.random(-500, 500) + parseFloat(t.dataset.y)
+        anime.random(-500, 500) + parseFloat(t.dataset.y),
       ],
       scale: () => [randomBetween(0.8, 3), randomBetween(0.5, 5)],
       rotate: () => [0, anime.random(-16, 16)],
       opacity: [
         { value: 1, duration: 1, easing: 'linear' },
-        { value: 0, duration: 150, delay: 1000, easing: 'easeOutQuad' }
-      ]
-    }
-  }
-};
+        { value: 0, duration: 150, delay: 1000, easing: 'easeOutQuad' },
+      ],
+    },
+  },
+}
 
 class IndexPage extends Component {
   state = {
-    first: true
-  };
+    first: true,
+  }
   componentDidMount() {
-    if (this.props.animatingOut || typeof window === 'undefined') return;
+    if (this.props.animatingOut || typeof window === 'undefined') return
 
     function animate() {
-      entryAnimation.options.shapeColors = [this.props.cssVars['--color']];
+      entryAnimation.options.shapeColors = [this.props.cssVars['--color']]
 
-      const buttonEl = document.querySelector('.about-me__trigger-button');
-      buttonEl.style.opacity = 0;
+      const buttonEl = document.querySelector('.about-me__trigger-button')
+      buttonEl.style.opacity = 0
 
-      const rect = this.title.getBoundingClientRect();
-      const translateY = window.innerHeight / 2 - rect.height / 2 - rect.y;
-      const translateX = window.innerWidth / 2 - rect.width / 2 - rect.x;
+      const rect = this.title.getBoundingClientRect()
+      const translateY = window.innerHeight / 2 - rect.height / 2 - rect.y
+      const translateX = window.innerWidth / 2 - rect.width / 2 - rect.x
 
       anime
         .timeline()
@@ -79,17 +79,17 @@ class IndexPage extends Component {
           targets: this.title,
           translateY,
           translateX,
-          duration: 1
+          duration: 1,
         })
         .add({
           targets: this.title,
           duration: 1,
-          opacity: 1
+          opacity: 1,
         })
         .finished.then(() => {
-          const title = new Word(this.title, entryAnimation.options);
-          title.show(entryAnimation.show);
-        });
+          const title = new Word(this.title, entryAnimation.options)
+          title.show(entryAnimation.show)
+        })
 
       setTimeout(() => {
         anime({
@@ -98,7 +98,7 @@ class IndexPage extends Component {
           translateX: 0,
           scale: 0.45,
           duration: 400,
-          easing: 'easeInOutSine'
+          easing: 'easeInOutSine',
         })
           .finished.then(() => animateInList(this.links))
           .then(() => {
@@ -107,16 +107,16 @@ class IndexPage extends Component {
               opacity: 1,
               translateY: [60, 0],
               delay: 1000,
-              duration: 800
-            });
-          });
-      }, 1700);
+              duration: 800,
+            })
+          })
+      }, 1700)
     }
 
-    animate = animate.bind(this);
+    animate = animate.bind(this)
     if (this.props.animatingIn) {
-      setTimeout(animate, 400);
-    } else animate();
+      setTimeout(animate, 400)
+    } else animate()
   }
 
   render() {
@@ -124,14 +124,14 @@ class IndexPage extends Component {
       <div
         className="page--landing"
         ref={el => {
-          this.el = el;
+          this.el = el
         }}
       >
         <div>
           <h1
             className="page--landing__title"
             ref={el => {
-              this.title = el;
+              this.title = el
             }}
           >
             Alex&nbsp;Holachek
@@ -155,9 +155,8 @@ class IndexPage extends Component {
           </ul>
         </div>
       </div>
-    );
+    )
   }
 }
 
 export default IndexPage
-

@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 
-import landingImg from './assets/prog-mass-landing.png';
-import redesignImg from './assets/progressive-mass-redesign.png';
-import repImg from './assets/prog-mass-3.png';
-import oldView from './assets/prog-mass-csv.png';
+import landingImg from './assets/prog-mass-landing.png'
+import redesignImg from './assets/progressive-mass-redesign.png'
+import repImg from './assets/prog-mass-3.png'
+import oldView from './assets/prog-mass-csv.png'
 
-import Post from '../../../components/Post';
+import Post from '../../../components/Post'
 
 class ProgressiveMassPage extends Component {
   render() {
@@ -31,10 +31,9 @@ class ProgressiveMassPage extends Component {
           </a>.
         </p>
         <p>
-          The initial version made use of a small node backend I
-          wrote that served legistator voting information parsed from a CSV. The
-          backend has since been enhanced other volunteers into a proper
-          database.
+          The initial version made use of a small node backend I wrote that
+          served legistator voting information parsed from a CSV. The backend
+          has since been enhanced other volunteers into a proper database.
         </p>
         <Tabs>
           <TabList>
@@ -60,9 +59,9 @@ class ProgressiveMassPage extends Component {
                 <b>Older interface:</b> In order to understand the spreadsheet,
                 you had to already know who your representative was, and in
                 order to understand the context of any particular vote you had
-                to follow the tiny link at the top to load the full text of the bill.
-                As someone new to state politics, I
-                personally found it difficult to parse.{' '}
+                to follow the tiny link at the top to load the full text of the
+                bill. As someone new to state politics, I personally found it
+                difficult to parse.{' '}
               </figcaption>
             </figure>
           </TabPanel>
@@ -76,7 +75,9 @@ class ProgressiveMassPage extends Component {
               <figcaption>
                 I tried to make the landing page as simple and inviting as
                 possible. It has one call to action: enter in your address to
-                find your representatives. (For those who don't want to enter in their address or already know their representatives, there's a link at top right to view all legislators.)
+                find your representatives. (For those who don't want to enter in
+                their address or already know their representatives, there's a
+                link at top right to view all legislators.)
               </figcaption>
             </figure>
 
@@ -86,13 +87,14 @@ class ProgressiveMassPage extends Component {
               cosponsorships.
             </p>
             <figure>
-            <img
-              src={repImg}
-              alt="a scorecard for an individual massachussetts representative"
-            />
-            <figcaption>
-              The scorecard rates a rep's votes and bill cosponsorships against Progressive Massachusetts' legislative priorities.
-            </figcaption>
+              <img
+                src={repImg}
+                alt="a scorecard for an individual massachussetts representative"
+              />
+              <figcaption>
+                The scorecard rates a rep's votes and bill cosponsorships
+                against Progressive Massachusetts' legislative priorities.
+              </figcaption>
             </figure>
             <p>
               Further down the legislator's page, the site juxtaposes an
@@ -100,18 +102,21 @@ class ProgressiveMassPage extends Component {
               went to a vote, hopefully contextualizing voting information in a
               way that makes it more accessible for newcomers:
             </p>
-           <figure>
-           <img
-              src={redesignImg}
-              alt="the redesigned data view for the progressive mass scorecard"
-            />
-            <figcaption>This interface hopefully invites the user to filter and explore the data based on his or her particular interests.</figcaption>
-           </figure>
+            <figure>
+              <img
+                src={redesignImg}
+                alt="the redesigned data view for the progressive mass scorecard"
+              />
+              <figcaption>
+                This interface hopefully invites the user to filter and explore
+                the data based on his or her particular interests.
+              </figcaption>
+            </figure>
           </TabPanel>
         </Tabs>
       </Post>
-    );
+    )
   }
 }
 
-export default ProgressiveMassPage;
+export default ProgressiveMassPage

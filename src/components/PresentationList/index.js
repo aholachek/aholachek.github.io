@@ -1,36 +1,36 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import anime from 'animejs';
-import Card from './Card';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import anime from 'animejs'
+import Card from './Card'
 
 class PresentationList extends Component {
   static propTypes = {
     title: PropTypes.string,
     links: PropTypes.array,
-    animatingOut: PropTypes.bool
-  };
+    animatingOut: PropTypes.bool,
+  }
 
-  state = {};
+  state = {}
 
   componentDidMount() {
-    if (this.props.animatingOut) return;
-    const content = this.el.querySelector('.page--list__content');
+    if (this.props.animatingOut) return
+    const content = this.el.querySelector('.page--list__content')
     anime({
       targets: content.querySelectorAll('.card'),
       opacity: {
         value: 1,
         duration: 300,
-        easing: 'easeInSine'
+        easing: 'easeInSine',
       },
       translateY: [50, 0],
       delay: (x, i) => i * 100 + 300,
       duration: 1000,
-      elasticity: 500
-    });
+      elasticity: 500,
+    })
   }
 
   render() {
-    const { links, title, simple } = this.props;
+    const { links, title, simple } = this.props
     return (
       <div className="page--list" ref={el => (this.el = el)}>
         <div>
@@ -42,7 +42,7 @@ class PresentationList extends Component {
               <ul
                 className={`card-grid ${simple ? 'card-grid--simple' : ''}`}
                 ref={el => {
-                  this.list = el;
+                  this.list = el
                 }}
               >
                 {links.map(l => <Card {...l} simple={simple} />)}
@@ -51,8 +51,8 @@ class PresentationList extends Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default PresentationList;
+export default PresentationList

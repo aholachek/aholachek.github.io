@@ -1,62 +1,62 @@
-import Helmet from 'react-helmet';
-import React from 'react';
-import { Location } from '@reach/router';
-import CustomProperties from 'react-custom-properties';
-import colorThemes from './color-themes';
-import Header from '../Header';
-import AboutMe from '../AboutMe';
+import Helmet from 'react-helmet'
+import React from 'react'
+import { Location } from '@reach/router'
+import CustomProperties from 'react-custom-properties'
+import colorThemes from './color-themes'
+import Header from '../Header'
+import AboutMe from '../AboutMe'
 
-import 'normalize.css';
-import '../../styles/index.scss';
+import 'normalize.css'
+import '../../styles/index.scss'
 
-const pageTransitionTime = 500;
+const pageTransitionTime = 500
 
 const getCSSVars = (d = {}) => {
   return {
     '--color': d.background === 'lighter' ? d.darker : d.lighter,
     '--background-color': d.background === 'lighter' ? d.lighter : d.darker,
     '--darker-color': d.darker,
-    '--lighter-color': d.lighter
-  };
-};
+    '--lighter-color': d.lighter,
+  }
+}
 
 class Layout extends React.Component {
   state = {
     prevPage: {},
-    theme: colorThemes[Math.floor(Math.random() * colorThemes.length)]
-  };
+    theme: colorThemes[Math.floor(Math.random() * colorThemes.length)],
+  }
 
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.location.pathname !== this.props.location.pathname) {
-      const newThemes = colorThemes.filter(t => t !== this.state.theme);
+      const newThemes = colorThemes.filter(t => t !== this.state.theme)
       this.setState({
         prevPage: {
           pathname: prevProps.location.pathname,
           children: prevProps.children,
-          theme: this.state.theme
+          theme: this.state.theme,
         },
-        theme: newThemes[Math.floor(Math.random() * newThemes.length)]
-      });
+        theme: newThemes[Math.floor(Math.random() * newThemes.length)],
+      })
       setTimeout(() => {
         this.setState({
-          prevPage: {}
-        });
-      }, pageTransitionTime);
+          prevPage: {},
+        })
+      }, pageTransitionTime)
     }
   }
 
   render() {
     const currentComponent = React.cloneElement(this.props.children, {
       cssVars: getCSSVars(this.state.theme),
-      animatingIn: this.state.prevPage
-    });
+      animatingIn: this.state.prevPage,
+    })
 
     const prevComponent =
       this.state.prevPage.children &&
       React.cloneElement(this.state.prevPage.children, {
         cssVars: getCSSVars(this.state.prevPage.theme),
-        animatingOut: true
-      });
+        animatingOut: true,
+      })
 
     return (
       <div>
@@ -83,10 +83,10 @@ class Layout extends React.Component {
             )}
             <main>{currentComponent}</main>
           </div>
-          <AboutMe/>
+          <AboutMe />
         </CustomProperties>
       </div>
-    );
+    )
   }
 }
 
@@ -94,4 +94,4 @@ export default ({ children }) => (
   <Location>
     {({ location }) => <Layout location={location}>{children}</Layout>}
   </Location>
-);
+)

@@ -1,25 +1,25 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { Flipper, Flipped } from 'react-flip-toolkit';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { Flipper, Flipped } from 'react-flip-toolkit'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faLinkedin,
   faTwitter,
-  faGithub
-} from '@fortawesome/free-brands-svg-icons';
+  faGithub,
+} from '@fortawesome/free-brands-svg-icons'
 
 class AboutMe extends Component {
   state = {
-    open: false
-  };
+    open: false,
+  }
 
   openModal = () => {
-    this.setState({ open: true });
-  };
+    this.setState({ open: true })
+  }
   closeModal = e => {
-    this.setState({ open: false, closing: true });
-    e.stopPropagation();
-  };
+    this.setState({ open: false, closing: true })
+    e.stopPropagation()
+  }
 
   renderContents = () => {
     return (
@@ -71,23 +71,23 @@ class AboutMe extends Component {
           </p>
         </div>
       </div>
-    );
-  };
+    )
+  }
 
   onAnimationComplete = el => {
     if (!this.state.open) {
-      el.querySelector('.about-me__question-mark').style.opacity = 1;
+      el.querySelector('.about-me__question-mark').style.opacity = 1
     }
-  };
+  }
 
   render() {
-    const ButtonEl = this.state.open ? 'div' : 'button';
+    const ButtonEl = this.state.open ? 'div' : 'button'
     return (
       <Flipper flipKey={this.state.open}>
         <Flipped
           flipId="modal"
           onStart={el => {
-            el.querySelector('.about-me__question-mark').style.opacity = 0;
+            el.querySelector('.about-me__question-mark').style.opacity = 0
           }}
           onComplete={this.onAnimationComplete}
         >
@@ -109,8 +109,8 @@ class AboutMe extends Component {
           </ButtonEl>
         </Flipped>
       </Flipper>
-    );
+    )
   }
 }
 
-export default AboutMe;
+export default AboutMe
