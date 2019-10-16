@@ -71,8 +71,7 @@ class AboutMe extends Component {
             interfaces.{' '}
           </p>
           <p>
-            I work at <a href="http://codecademy.com">Codecademy</a> building
-            tools to teach people how to code.{' '}
+            I work at <a href="https://www.stashinvest.com/">StashInvest</a> in NYC.
           </p>
 
           <p>
