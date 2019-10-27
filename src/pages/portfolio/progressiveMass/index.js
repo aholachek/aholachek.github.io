@@ -14,17 +14,16 @@ class ProgressiveMassPage extends Component {
     return (
       <Post title="Creating a Scorecard for Massachussetts Legislators">
         <p className="lead">
-          As a volunteer project, I designed and built{' '}
+          As a volunteer project,{' '}
           <a
             href="https://scorecard.progressivemass.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            a new interface to help people explore state legislator voting
-            information
+            I designed and built a new interface
           </a>{' '}
-          collected by a grassroots organization called Progressive
-          Massachusetts.
+          to help people explore state legislator voting information collected
+          by a grassroots organization called Progressive Massachusetts.
         </p>
 
         <p>
@@ -82,10 +81,10 @@ class ProgressiveMassPage extends Component {
             <figure>
               <img src={landingImg} alt="the progressive mass landing page" />
               <figcaption>
-                The landing page has one call to action: enter in your address to
-                find your representatives. (For those who don't want to enter in
-                their address or already know their representatives, there's a
-                link at top right to view all legislators.)
+                The landing page has one call to action: enter in your address
+                to find your representatives. (For those who don't want to enter
+                in their address or already know their representatives, there's
+                a link at top right to view all legislators.)
               </figcaption>
             </figure>
 
