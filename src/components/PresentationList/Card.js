@@ -32,9 +32,9 @@ const Card = ({
 }) => {
   const content = (
     <div>
-      {tag && <div className="card__tag">{tag}</div>}
-
       <div className="card__padding">
+        {tag && <div className="card__tag">{tag}</div>}
+
         <div className="card__header">
           <h2>{text}</h2>
           {!!skills && renderSkillList(skills)}

@@ -1,7 +1,7 @@
 .about-me__trigger-button {
   position: fixed;
-  bottom: .8rem;
-  right: .8rem;
+  bottom: 0.8rem;
+  right: 0.8rem;
   height: 4.25rem;
   width: 4.25rem;
   font-size: 2.9rem;
@@ -24,20 +24,21 @@
   border: 0;
   @include heading-font();
   cursor: pointer;
-  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out, border-radius .5s;
+  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out,
+    border-radius 0.5s;
   outline: 0;
   transform-origin: 100% 100%;
 
   .about-me__question-mark {
     height: 2.5rem;
     display: inline-block;
-    transition: transform 0.4s, opacity .25s;
+    transition: transform 0.4s, opacity 0.25s;
     position: relative;
-    top: .4rem;
+    top: 0.4rem;
   }
 
   &::before {
-    content: "";
+    content: '';
     height: 6rem;
     width: 6rem;
     position: absolute;
@@ -48,13 +49,13 @@
   }
 
   &:focus {
-    &::before{
-      opacity: .5;
+    &::before {
+      opacity: 0.5;
     }
   }
 
-
-  &:hover .about-me__question-mark, &:focus .about-me__question-mark {
+  &:hover .about-me__question-mark,
+  &:focus .about-me__question-mark {
     transform: scale(1.25);
   }
 
@@ -102,18 +103,22 @@
 }
 
 .about-me__container {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  max-width: 800px;
   margin: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+
   text-align: left;
   text-transform: none;
 
+  @media (min-width: 992px) {
+    position: relative;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    max-width: 800px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
   h1 {
-    text-align: center;
-    font-size: 2.8rem;
+    font-size: 3.5rem;
     margin-top: 4rem;
     line-height: 1.1;
     margin-bottom: 1rem;
@@ -122,13 +127,24 @@
     opacity: 0;
 
     @media (min-width: $screen-md) {
+      text-align: center;
       font-size: 4.2rem;
-      margin-top: 0;
+      margin-top: 3.5rem;
     }
   }
 }
 
 .about-me__contents {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  @media (min-width: 992px) {
+    position: relative;
+  }
+
   background: white;
   color: $color-text;
   @include interesting-link(1.5rem);
@@ -153,11 +169,17 @@
 .about-me__close-btn {
   outline: 0;
   border-radius: 4px;
-  padding-top: .3rem;
-  z-index:1;
+  padding-top: 0.3rem;
+  z-index: 1;
   position: absolute;
-  right: 2rem;
-  top: 2.5rem;
+  right: 1rem;
+  top: 1rem;
+
+  @media (min-width: $screen-md) {
+    right: 2rem;
+    top: 2.5rem;
+  }
+
   cursor: pointer;
   height: 4rem;
   width: 4rem;
@@ -184,10 +206,12 @@
 }
 
 .about-me__links {
-  display:flex;
+  display: flex;
   font-size: 2.5rem;
   margin-bottom: 2rem;
-  justify-content: center;
+  @media (min-width: $screen-md) {
+    justify-content: center;
+  }
   > div {
     margin-right: 2rem;
   }
