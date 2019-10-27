@@ -2,15 +2,13 @@
   position: fixed;
   bottom: 0.8rem;
   right: 0.8rem;
-  height: 4.25rem;
-  width: 4.25rem;
-  font-size: 2.9rem;
+  height: 72px;
+  width: 72px;
+  font-size: 3rem;
+
   @media (min-width: $screen-md) {
     bottom: 2rem;
     right: 2rem;
-    height: 5rem;
-    width: 5rem;
-    font-size: 3.2rem;
   }
   z-index: 5;
   display: flex;
@@ -35,17 +33,6 @@
     transition: transform 0.4s, opacity 0.25s;
     position: relative;
     top: 0.4rem;
-  }
-
-  &::before {
-    content: '';
-    height: 6rem;
-    width: 6rem;
-    position: absolute;
-    border-radius: 100px;
-    background-color: var(--color);
-    opacity: 0;
-    z-index: 0;
   }
 
   &:focus {
@@ -139,7 +126,6 @@
   top: 0;
   left: 0;
   right: 0;
-  overflow: auto;
 
   height: 100%;
   @media (min-width: $screen-md) {

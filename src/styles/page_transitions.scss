@@ -1,4 +1,4 @@
-$transition-time: .4s;
+$transition-time: 0.4s;
 
 .page {
   background-color: var(--background-color);
@@ -9,13 +9,14 @@ $transition-time: .4s;
   top: 0;
   bottom: 0;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
   z-index: 1;
 }
 
 @keyframes slideInTop {
   0% {
     transform: translateY(100%);
-    opacity:0;
+    opacity: 0;
   }
   100% {
     transform: translateY(0);
