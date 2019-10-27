@@ -135,14 +135,16 @@
 }
 
 .about-me__contents {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+  overflow: auto;
 
+  height: 100%;
   @media (min-width: $screen-md) {
     position: relative;
+    height: auto;
   }
 
   background: white;
