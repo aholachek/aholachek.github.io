@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:400,700");
-
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400,700');
 
 body {
   position: relative;
@@ -43,14 +42,21 @@ img {
 }
 
 .lead {
-  font-size: 2.2rem;
+  font-size: 1.8rem;
+  @media (min-width: 992px) {
+    font-size: 2.2rem;
+  }
   line-height: 1.4;
   font-weight: 400;
-  font-family: $base-font-family;
 }
 
-p, ol {
-  font-size: 1.7rem;
+p,
+ol {
+  font-size: 1.2rem;
+  @media (min-width: 992px) {
+    font-size: 1.6rem;
+  }
+
   line-height: 1.5;
   font-weight: 400;
   color: $color-text;

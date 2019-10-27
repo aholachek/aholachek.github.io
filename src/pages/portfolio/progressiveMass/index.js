@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 
 import landingImg from './assets/prog-mass-landing.png'
-import redesignImg from './assets/progressive-mass-redesign.png'
+import redesignImg from './assets/prog-mass-redesign.png'
 import repImg from './assets/prog-mass-3.png'
 import oldView from './assets/prog-mass-csv.png'
 
@@ -24,17 +24,26 @@ class ProgressiveMassPage extends Component {
             information
           </a>{' '}
           collected by a grassroots organization called Progressive
-          Massachusetts. The app uses a small node API to deliver information
-          previously scattered in various spreadsheets to{' '}
-          <a href="https://github.com/aholachek/legislator-scorecard">
-            an accessible, mobile-friendly front end written in React
-          </a>.
+          Massachusetts.
         </p>
+
         <p>
-          The initial version made use of a small node backend I wrote that
-          served legistator voting information parsed from a CSV. The backend
-          has since been enhanced other volunteers into a proper database.
+          The <a href="https://www.gatsbyjs.org/">GatsbyJS</a>{' '}
+          statically-generated site uses{' '}
+          <a href="https://developers.google.com/sheets/api">Google Sheets</a>{' '}
+          as a lightweight CMS and sources additional legislator data from the{' '}
+          <a href="https://docs.openstates.org/en/latest/api/v2/">
+            Open States API.
+          </a>{' '}
         </p>
+
+        <p>
+          The code is open source and you can{' '}
+          <a href="https://github.com/aholachek/legislator-scorecard">
+            check it out here.
+          </a>
+        </p>
+
         <Tabs>
           <TabList>
             <Tab>Original Interface</Tab>
@@ -73,8 +82,7 @@ class ProgressiveMassPage extends Component {
             <figure>
               <img src={landingImg} alt="the progressive mass landing page" />
               <figcaption>
-                I tried to make the landing page as simple and inviting as
-                possible. It has one call to action: enter in your address to
+                The landing page has one call to action: enter in your address to
                 find your representatives. (For those who don't want to enter in
                 their address or already know their representatives, there's a
                 link at top right to view all legislators.)
@@ -105,11 +113,10 @@ class ProgressiveMassPage extends Component {
             <figure>
               <img
                 src={redesignImg}
-                alt="the redesigned data view for the progressive mass scorecard"
+                alt="the redesigned data view for the progressive mass scorecard, where voting information is displayed in a clean, filterable table view"
               />
               <figcaption>
-                This interface hopefully invites the user to filter and explore
-                the data based on his or her particular interests.
+                This interface invites the user to filter and explore the data.
               </figcaption>
             </figure>
           </TabPanel>

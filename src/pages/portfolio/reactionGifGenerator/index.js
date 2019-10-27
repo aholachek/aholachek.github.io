@@ -9,7 +9,17 @@ class ReactionGifGeneratorPage extends Component {
   render() {
     return (
       <Post title="Reaction GIF Generator">
-        <p className="lead">
+        <img
+          src={unimpressedGif}
+          alt="a screenshot from the reaction gif generator"
+          style={{
+            maxWidth: '40rem',
+            height: 'auto',
+            margin: '3rem auto 2rem auto',
+            display: 'block'
+          }}
+        />
+        <p>
           Just for fun, I built a small app in Vue.js that allowed you to take a
           selfie to find an appropriate reaction gif. It ended up getting
           featured on websites such as{' '}
@@ -17,12 +27,6 @@ class ReactionGifGeneratorPage extends Component {
             Mashable
           </a>.
         </p>
-
-        <img
-          src={unimpressedGif}
-          alt="a screenshot from the reaction gif generator"
-          style={{ maxWidth: '40rem', height: 'auto' }}
-        />
         <p>
           I built it using the Oxford Emotion API, the Giphy API, and HTML5
           webcam access

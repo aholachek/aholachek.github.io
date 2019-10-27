@@ -2,11 +2,17 @@
   display: flex;
   margin-top: 4rem;
   margin-bottom: 2rem;
+  @include heading-font();
 
   li {
     padding: 1.2rem;
     cursor: pointer;
-    font-size: 2rem;
+    font-size: 1.5rem;
+
+    @media (min-width: 992px) {
+      font-size: 2rem;
+    }
+
     text-transform: lowercase;
     flex: 1;
     display: flex;
