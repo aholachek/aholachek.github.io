@@ -6,7 +6,7 @@ const links = [
   {
     text: 'Github',
     to: 'https://github.com/aholachek',
-    description: 'a few interesting open source libraries',
+    description: 'A few interesting open source libraries',
     external: true
   },
   {

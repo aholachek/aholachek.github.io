@@ -4,48 +4,44 @@ import Helmet from 'react-helmet'
 
 const links = [
   {
-    text: 'CSS Tricks: Building a Complex UI Animation In React ',
+    tag: 'React Conf 2019',
+    text: 'Building Mobile-First Animations in React',
+    to:
+      'https://youtu.be/JDDxR1a15Yo?t=10664',
+    external: true,
+    description: 'A talk I gave about using animations to create a native feel on the mobile web'
+  },
+  {
+    tag: 'CSS Tricks',
+    text: 'Building a Complex UI Animation In React ',
     to:
       'https://css-tricks.com/building-a-complex-ui-animation-in-react-simply/',
     external: true,
-    description: 'A tutorial for building an animated navigation menu component'
-  },
-  {
-    text: 'Keep your Redux store in check with redux-usage-report',
-    to:
-      'https://medium.com/about-codecademy/keep-your-large-redux-application-in-check-with-redux-usage-report-e2e4f31bb86f',
-    external: true,
     description:
-      'How I use ES6 Proxies to help refactor large Redux applications'
+      'An article I wrote about building an animated navigation menu component'
   },
-
   {
-    text: 'Building animations in React from scratch',
+    tag: 'React NYC meetup',
+    text: 'React & the FLIP Technique',
+    to: 'https://www.youtube.com/watch?v=s06Z_e8ac0Y',
+    external: true,
+    description: 'A talk I gave at React NYC about the FLIP animation technique'
+  },
+  {
+    tag: 'Medium',
+    text: 'Building Animations in React from Scratch',
     to:
       'https://medium.com/about-codecademy/building-animations-in-react-from-scratch-c66a582c9b65',
     external: true,
-    description: 'Hacking React lifecycle events to create advanced effects'
-  },
-  {
-    text: "What's the most developer friendly React animation library?",
-    to:
-      'https://www.freshtilledsoil.com/whats-the-most-developer-friendly-react-animation-library/',
-    external: true,
-    description: 'A quick, practical comparison of animation libraries'
-  },
-  {
-    text: 'Performance audit of MFA.org',
-    to: 'https://www.freshtilledsoil.com/performance-audit-of-mfa-org/',
-    external: true,
-    description: 'Zeroing in on the culprits behind slow page loads'
+    description: 'An article I wrote about hacking React lifecycle events to create advanced effects'
   }
 ]
 const Articles = ({ animatingOut }) => {
   return (
     <Fragment>
-      <Helmet title="Alex Holachek | Articles" />
+      <Helmet title="Alex Holachek | Talks & Articles" />
       <PresentationList
-        title="Articles"
+        title="Talks & Articles"
         links={links}
         animatingOut={animatingOut}
       />

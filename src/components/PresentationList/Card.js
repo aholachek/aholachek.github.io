@@ -20,15 +20,28 @@ const renderDescription = description => (
   />
 )
 
-const Card = ({ skills, text, img, external, to, description, simple }) => {
+const Card = ({
+  skills,
+  text,
+  img,
+  external,
+  to,
+  description,
+  simple,
+  tag
+}) => {
   const content = (
     <div>
-      <div className="card__header">
-        <h2>{text}</h2>
-        {!!skills && renderSkillList(skills)}
-        {!!description && renderDescription(description)}
+      {tag && <div className="card__tag">{tag}</div>}
+
+      <div className="card__padding">
+        <div className="card__header">
+          <h2>{text}</h2>
+          {!!skills && renderSkillList(skills)}
+          {!!description && renderDescription(description)}
+        </div>
+        {!!img && <img className="card__img" src={img} />}
       </div>
-      {!!img && <img className="card__img" src={img} />}
     </div>
   )
   return (

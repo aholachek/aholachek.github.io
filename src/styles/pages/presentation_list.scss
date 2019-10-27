@@ -21,7 +21,11 @@
 
   > div {
     @include page-content();
-    @include heading-font();
+    text-transform: none;
+  }
+
+  .card__padding {
+    padding: 1.5rem;
   }
 
   .card-grid {
@@ -55,7 +59,6 @@
 
   a {
     display: block;
-    padding: 1.5rem;
     height: 100%;
     .card__header > h2 {
       display: inline;
@@ -67,7 +70,7 @@
       );
       background-size: 100%;
       background-repeat: no-repeat;
-      background-position: 0 .8em;
+      background-position: 0 0.8em;
     }
     &:hover {
       .card__header > h2 {
@@ -80,6 +83,14 @@
         background-position: 0 0;
       }
     }
+  }
+
+  .card__tag {
+    background-color: var(--color);
+    color: var(--background-color);
+    padding: 1rem;
+    line-height: 1;
+    @include heading-font();
   }
 
   .card__img {
@@ -97,20 +108,22 @@
   }
 
   .card__skills {
+    @include heading-font();
+    font-weight: normal;
     color: $color-text;
     font-weight: bold;
-    font-size: 1.6rem;
-    display:flex;
+    font-size: 1.8rem;
+    display: flex;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     > li {
-      margin-right: .5rem;
+      margin-right: 0.5rem;
     }
   }
 
   .card--simple {
     a {
-      display:flex;
+      display: flex;
       justify-content: center;
       align-items: center;
       min-height: 200px;

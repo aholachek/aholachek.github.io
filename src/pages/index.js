@@ -148,7 +148,7 @@ class IndexPage extends Component {
             </li>
             <li style={{ opacity: this.props.animatingOut ? 1 : 0 }}>
               <Link to="/articles">
-                <h2>Articles</h2>
+                <h2>Talks & articles</h2>
               </Link>
             </li>
           </ul>
