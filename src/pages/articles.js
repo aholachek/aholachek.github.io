@@ -9,7 +9,7 @@ const links = [
     to:
       'https://youtu.be/JDDxR1a15Yo?t=10664',
     external: true,
-    description: 'A talk I gave about using animations to create a native feel on the mobile web'
+    description: 'Using animations to create a native feel on the mobile web'
   },
   {
     tag: 'CSS Tricks',
@@ -18,14 +18,14 @@ const links = [
       'https://css-tricks.com/building-a-complex-ui-animation-in-react-simply/',
     external: true,
     description:
-      'An article I wrote about building an animated navigation menu component'
+      'Building an animated navigation menu component'
   },
   {
     tag: 'React NYC meetup',
     text: 'React & the FLIP Technique',
     to: 'https://www.youtube.com/watch?v=s06Z_e8ac0Y',
     external: true,
-    description: 'A talk I gave at React NYC about the FLIP animation technique'
+    description: 'Using the FLIP animation technique to create advanced UI animation effects'
   },
   {
     tag: 'Medium',
@@ -33,7 +33,7 @@ const links = [
     to:
       'https://medium.com/about-codecademy/building-animations-in-react-from-scratch-c66a582c9b65',
     external: true,
-    description: 'An article I wrote about hacking React lifecycle events to create advanced effects'
+    description: 'Hacking React lifecycle events to create advanced effects'
   }
 ]
 const Articles = ({ animatingOut }) => {

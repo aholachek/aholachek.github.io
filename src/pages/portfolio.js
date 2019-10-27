@@ -11,7 +11,7 @@ const links = [
   {
     text: 'Creating a Scorecard for Massachussetts Legislators',
     to: '/portfolio/progressiveMass',
-    skills: ['React', 'Node', 'UI Design'],
+    skills: ['React', 'APIs', 'UI Design'],
     img: scorecardImg
   },
   {
