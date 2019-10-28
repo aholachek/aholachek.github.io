@@ -1,10 +1,10 @@
-import Helmet from 'react-helmet'
 import React from 'react'
 import { Location } from '@reach/router'
 import CustomProperties from 'react-custom-properties'
 import colorThemes from './color-themes'
 import Header from '../Header'
 import AboutMe from '../AboutMe'
+import AboutMeLinks from '../AboutMe/Links'
 
 import 'normalize.css'
 import '../../styles/index.scss'
@@ -70,6 +70,9 @@ class Layout extends React.Component {
                 <Header path={this.state.prevPage.pathname} />
               )}
               <main>{prevComponent}</main>
+            <footer className="mobile-footer">
+              <AboutMeLinks />{' '}
+            </footer>
             </div>
           </CustomProperties>
         )}
@@ -82,6 +85,9 @@ class Layout extends React.Component {
               <Header path={this.props.location.pathname} />
             )}
             <main>{currentComponent}</main>
+            <footer className="mobile-footer">
+              <AboutMeLinks />{' '}
+            </footer>
           </div>
           <AboutMe initialHidden={this.props.location.pathname === '/'} />
         </CustomProperties>

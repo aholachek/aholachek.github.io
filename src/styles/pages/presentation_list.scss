@@ -6,6 +6,11 @@
 
 .page--list__header {
   @include page-content();
+  padding-top: 0;
+  @media (min-width: $screen-md) {
+    padding-top: 3rem;
+  }
+
   h1 {
     font-size: 5rem;
     @media (min-width: $screen-lg) {

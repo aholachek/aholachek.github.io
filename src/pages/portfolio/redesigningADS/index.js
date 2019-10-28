@@ -17,7 +17,7 @@ class RedesigningADS extends Component {
   render() {
     return (
       <Post title="Redesigning the Astrophysics Data System">
-        <p className="lead">
+        <p>
           When I was working on redesigning parts of the{' '}
           <a href="http://www.adsabs.harvard.edu/">
             NASA/Astrophysics Data System (ADS)

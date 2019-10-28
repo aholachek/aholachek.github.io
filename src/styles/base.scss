@@ -73,3 +73,10 @@ figcaption {
   font-style: italic;
   margin-top: 1rem;
 }
+
+.mobile-footer {
+
+  @media (min-width: $screen-md) {
+    display: none;
+  }
+}

@@ -13,7 +13,7 @@ class ProgressiveMassPage extends Component {
   render() {
     return (
       <Post title="Creating a Scorecard for Massachussetts Legislators">
-        <p className="lead">
+        <p>
           As a volunteer project,{' '}
           <a
             href="https://scorecard.progressivemass.com/"

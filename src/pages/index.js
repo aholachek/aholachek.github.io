@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 import Link from 'gatsby-link'
-import PropTypes from 'prop-types'
 import anime from 'animejs'
 import animateInList from './../utilities/animate-in-list'
 import Word from '../utilities/WordFx'
-import icons from '../utilities/icons'
 
 function randomBetween(minValue, maxValue, precision = 2) {
   return parseFloat(
@@ -68,48 +66,59 @@ class IndexPage extends Component {
       const buttonEl = document.querySelector('.about-me__trigger-button')
       buttonEl.style.opacity = 0
 
-      const rect = this.title.getBoundingClientRect()
-      const translateY = window.innerHeight / 2 - rect.height / 2 - rect.y
-      const translateX = window.innerWidth / 2 - rect.width / 2 - rect.x
+      const isDesktop = window.matchMedia('(min-width: 768px)').matches
 
-      anime
-        .timeline()
-        .add({
-          targets: this.title,
-          translateY,
-          translateX,
-          duration: 1
-        })
-        .add({
-          targets: this.title,
-          duration: 1,
-          opacity: 1
-        })
-        .finished.then(() => {
-          const title = new Word(this.title, entryAnimation.options)
-          title.show(entryAnimation.show)
-        })
+      const animateWords = () => {
+        const title = new Word(this.title, entryAnimation.options)
+        title.show(entryAnimation.show)
+      }
 
-      setTimeout(() => {
-        anime({
-          targets: this.title,
-          translateY: 0,
-          translateX: 0,
-          scale: 0.45,
-          duration: 400,
-          easing: 'easeInOutSine'
-        })
-          .finished.then(() => animateInList(this.links))
-          .then(() => {
-            anime({
-              targets: buttonEl,
-              opacity: 1,
-              translateY: [60, 0],
-              delay: 1000,
-              duration: 800
-            })
+      if (isDesktop) {
+        const rect = this.title.getBoundingClientRect()
+        const translateY = window.innerHeight / 2 - rect.height / 2 - rect.y
+        const translateX = window.innerWidth / 2 - rect.width / 2 - rect.x
+
+        anime
+          .timeline()
+          .add({
+            targets: this.title,
+            translateY,
+            translateX,
+            duration: 1
           })
-      }, 1700)
+          .add({
+            targets: this.title,
+            duration: 1,
+            opacity: 1
+          })
+          .finished.then(animateWords)
+        setTimeout(() => {
+          anime({
+            targets: this.title,
+            translateY: 0,
+            translateX: 0,
+            scale: 0.45,
+            duration: 400,
+            easing: 'easeInOutSine'
+          })
+            .finished.then(() => animateInList(this.links))
+            .then(() => {
+              anime({
+                targets: buttonEl,
+                opacity: 1,
+                translateY: [60, 0],
+                delay: 1000,
+                duration: 800
+              })
+            })
+        }, 1700)
+      } else {
+        document.querySelector('.page--landing__title').style.opacity = 1
+        animateWords()
+        setTimeout(() => {
+          animateInList(this.links)
+        }, 1700)
+      }
     }
 
     animate = animate.bind(this)

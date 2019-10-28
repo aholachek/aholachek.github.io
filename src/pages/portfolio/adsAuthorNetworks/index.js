@@ -10,7 +10,7 @@ class ReactionGifGeneratorPage extends Component {
   render() {
     return (
       <Post title="Rethinking the ADS author network visualizations">
-        <p className="lead">
+        <p>
           I created a new type of interactive author network visualization for
           the Astrophysics Data System and built it in D3.
         </p>

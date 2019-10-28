@@ -3,9 +3,12 @@
   padding-bottom: 1rem;
   text-transform: lowercase;
   font-size: 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+  @media screen and (min-width: $screen-md) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   .links {
     @include heading-font();
     justify-self: flex-end;
@@ -22,6 +25,7 @@
   }
   .home-icon {
     height: 2.2rem;
+    margin-bottom: 1rem;
   }
 
   a {

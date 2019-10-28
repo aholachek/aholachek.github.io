@@ -1,12 +1,7 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import { Flipper, Flipped } from 'react-flip-toolkit'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faLinkedin,
-  faTwitter,
-  faGithub
-} from '@fortawesome/free-brands-svg-icons'
+
+import AboutMeLinks from './Links'
 
 class AboutMe extends Component {
   state = {
@@ -44,34 +39,14 @@ class AboutMe extends Component {
         </button>
         <div className="about-me__contents">
           <h1>Hi, thanks for visiting!</h1>
-          <div className="about-me__links">
-            <div>
-              <a href="https://www.linkedin.com/in/alexholachek/">
-                <FontAwesomeIcon
-                  icon={faLinkedin}
-                  fixedWidth
-                  title="LinkedIn"
-                />
-              </a>
-            </div>
-            <div>
-              <a href="https://www.github.com/aholachek">
-                <FontAwesomeIcon icon={faGithub} fixedWidth title="Github" />
-              </a>
-            </div>
-            <div>
-              <a href="https://www.twitter.com/alex_holachek">
-                <FontAwesomeIcon icon={faTwitter} fixedWidth title="Twitter" />
-              </a>
-            </div>
-          </div>
-
+          <AboutMeLinks />
           <p>
             I'm a front end developer who likes building useful, user-friendly
             interfaces.{' '}
           </p>
           <p>
-            I work at <a href="https://www.stashinvest.com/">StashInvest</a> in NYC.
+            I work at <a href="https://www.stashinvest.com/">StashInvest</a> in
+            NYC.
           </p>
 
           <p>
