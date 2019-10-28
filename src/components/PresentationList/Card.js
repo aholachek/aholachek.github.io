@@ -2,17 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 
-const renderSkillList = skills => (
-  <ul className="card__skills">
-    {skills.map((s, i) => (
-      <li>
-        {s}
-        {i === skills.length - 1 ? '' : ','}
-      </li>
-    ))}
-  </ul>
-)
-
 const renderDescription = description => (
   <p
     className="card__description"
@@ -37,7 +26,6 @@ const Card = ({
 
         <div className="card__header">
           <h2>{text}</h2>
-          {!!skills && renderSkillList(skills)}
           {!!description && renderDescription(description)}
         </div>
         {!!img && <img className="card__img" src={img} />}

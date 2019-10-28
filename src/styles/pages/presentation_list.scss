@@ -63,6 +63,7 @@
     margin-bottom: 0;
     line-height: 1.4;
     margin-top: 1rem;
+    font-family: 'Josefin Sans';
   }
 
   a {
@@ -131,19 +132,6 @@
     }
   }
 
-  .card__skills {
-    @include heading-font();
-    font-weight: normal;
-    color: $color-text;
-    font-weight: bold;
-    font-size: 1.8rem;
-    display: flex;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-    > li {
-      margin-right: 0.5rem;
-    }
-  }
 
   .card--simple {
     a {
