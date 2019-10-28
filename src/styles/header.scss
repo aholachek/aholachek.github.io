@@ -1,5 +1,6 @@
 .header {
   @include page-content();
+  padding-top: 2rem;
   padding-bottom: 1rem;
   text-transform: lowercase;
   font-size: 2rem;
@@ -8,6 +9,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-top: 3rem;
   }
   .links {
     @include heading-font();

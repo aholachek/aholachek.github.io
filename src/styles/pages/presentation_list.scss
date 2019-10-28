@@ -6,7 +6,7 @@
 
 .page--list__header {
   @include page-content();
-  padding-top: 0;
+  padding-top: 2rem;
   @media (min-width: $screen-md) {
     padding-top: 3rem;
   }
