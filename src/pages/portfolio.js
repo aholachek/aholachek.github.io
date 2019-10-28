@@ -11,25 +11,25 @@ const links = [
   {
     text: 'Creating a Scorecard for Massachussetts Legislators',
     to: '/portfolio/progressiveMass',
-    skills: ['React', 'APIs', 'UI Design'],
-    img: scorecardImg
+    img: scorecardImg,
+    description: 'I helped a grassroots political organization present their data in a more user-friendly way.'
   },
   {
     text: 'Redesigning the Astrophysics Data System',
     to: '/portfolio/redesigningADS',
-    skills: ['React', 'Redux', 'UI Design'],
+    description: 'I worked on building a new version of the UI for the NASA/Astrophysics Data System.',
     img: bbbImg
   },
   {
     text: 'Going (briefly) viral with a reaction gif generator',
     to: '/portfolio/reactionGifGenerator',
-    skills: ['Vue', 'Node.js'],
+    description: 'I made a fun side project that got mild traction on the internet for a few days.',
     img: gifImg
   },
   {
     text: 'Rethinking the ADS author network visualizations',
     to: '/portfolio/adsAuthorNetworks',
-    skills: ['D3', 'Python', 'Visualization Design'],
+    description: 'I redesigned and rebuilt network visualizations in D3.',
     img: networkImg
   }
 ]

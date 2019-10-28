@@ -17,6 +17,9 @@
     @media (min-width: $screen-md) {
       display: flex;
     }
+    a {
+      font-weight: normal;
+    }
     div {
       margin-bottom: 1rem;
       @media (min-width: $screen-md) {
@@ -26,8 +29,14 @@
     }
   }
   .home-icon {
-    height: 2.2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
+    width: 2.1rem;
+    height: 2.1rem;
+    fill: var(--color);
+    @media (min-width: $screen-md) {
+      width: 2.25rem;
+      height: 2.25rem;
+    }
   }
 
   a {

@@ -12,6 +12,7 @@
   }
 
   h1 {
+    font-weight: normal;
     font-size: 5rem;
     @media (min-width: $screen-lg) {
       font-size: 9rem;
