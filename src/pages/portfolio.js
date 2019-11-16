@@ -36,7 +36,10 @@ const links = [
 const Portfolio = ({ animatingOut }) => {
   return (
     <Fragment>
-      <Helmet title="Alex Holachek | Portfolio" />
+      <Helmet>
+        <title>Alex Holachek | Portfolio</title>
+        <meta name="description" content="A colorful little portfolio of web development work" />
+      </Helmet>
       <PresentationList
         title="Portfolio"
         links={links}

@@ -26,7 +26,10 @@ const links = [
 const Code = ({ animatingOut }) => {
   return (
     <Fragment>
-      <Helmet title="Alex Holachek | Code" />
+      <Helmet>
+        <title>Alex Holachek | Code</title>
+        <meta name="description" content="A colorful little portfolio of web development work" />
+      </Helmet>
       <PresentationList
         title="Code"
         links={links}

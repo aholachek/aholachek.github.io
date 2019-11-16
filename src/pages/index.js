@@ -136,9 +136,10 @@ class IndexPage extends Component {
           this.el = el
         }}
       >
-        <Helmet>
-          <meta name="description" content="A colorful little portfolio of web development work" />
-        </Helmet>
+      <Helmet>
+        <title>Alex Holachek's website</title>
+        <meta name="description" content="A colorful little portfolio of web development work" />
+      </Helmet>
 
         <div>
           <h1
