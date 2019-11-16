@@ -3,6 +3,7 @@ import Link from 'gatsby-link'
 import anime from 'animejs'
 import animateInList from './../utilities/animate-in-list'
 import Word from '../utilities/WordFx'
+import Helmet from 'react-helmet'
 
 function randomBetween(minValue, maxValue, precision = 2) {
   return parseFloat(
@@ -135,6 +136,10 @@ class IndexPage extends Component {
           this.el = el
         }}
       >
+        <Helmet>
+          <meta name="description" content="A colorful little portfolio of web development work" />
+        </Helmet>
+
         <div>
           <h1
             className="page--landing__title"

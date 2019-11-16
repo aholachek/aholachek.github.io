@@ -5,7 +5,7 @@ import Helmet from 'react-helmet'
 const links = [
   {
     tag: 'React Conf 2019',
-    text: 'Building Mobile-First Animations in React',
+    text: 'Mobile-First Animations in React',
     to:
       'https://youtu.be/JDDxR1a15Yo?t=10664',
     external: true,
@@ -39,7 +39,9 @@ const links = [
 const Articles = ({ animatingOut }) => {
   return (
     <Fragment>
-      <Helmet title="Alex Holachek | Talks & Articles" />
+      <Helmet title="Alex Holachek | Talks & Articles" >
+          <meta name="description" content="A colorful little portfolio of web development work" />
+        </Helmet>
       <PresentationList
         title="Talks & Articles"
         links={links}
