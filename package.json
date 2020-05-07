@@ -21,7 +21,7 @@
     "gatsby-transformer-remark": "next",
     "i": "^0.3.6",
     "normalize.css": "^7.0.0",
-    "npm": "^6.4.1",
+    "npm": "^6.13.4",
     "react": "^16.5.1",
     "react-custom-properties": "^1.2.0",
     "react-dom": "^16.5.1",
