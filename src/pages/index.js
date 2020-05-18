@@ -3,7 +3,7 @@ import Link from 'gatsby-link'
 import anime from 'animejs'
 import animateInList from './../utilities/animate-in-list'
 import Word from '../utilities/WordFx'
-import Helmet from 'react-helmet'
+import {Helmet} from 'react-helmet'
 
 function randomBetween(minValue, maxValue, precision = 2) {
   return parseFloat(

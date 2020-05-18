@@ -50,9 +50,8 @@ class AboutMe extends Component {
           </p>
 
           <p>
-            I recently had fun redesigning this portfolio website and{' '}
-            <a href="https://github.com/aholachek/aholachek.github.io">
-              rebuilding it using Gatsby.
+           You can check out  <a href="https://github.com/aholachek/aholachek.github.io">
+              the code for this site on github.
             </a>
           </p>
         </div>

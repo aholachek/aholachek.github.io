@@ -1,12 +1,12 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-const links = ['code', 'portfolio', 'articles']
+const links = ['code', 'portfolio', 'talks & articles']
 function renderLinks(path) {
-  return links.filter(l => !new RegExp(`^/?${l}/?$`).test(path)).map(l => {
+  return links.map(l => {
     return (
       <div>
-        <Link to={`/${l}`}>{l}</Link>
+        <Link to={`/${l.split(' ').slice(-1)[0]}`}>{l}</Link>
       </div>
     )
   })

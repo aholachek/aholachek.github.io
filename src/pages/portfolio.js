@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import PresentationList from '../components/PresentationList'
-import Helmet from 'react-helmet'
+import {Helmet} from 'react-helmet'
 
 import bbbImg from './portfolio/redesigningADS/assets/bbb_full_page.png'
 import scorecardImg from './portfolio/progressiveMass/assets/prog-mass-thumbnail.png'

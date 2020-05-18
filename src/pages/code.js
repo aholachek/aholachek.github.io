@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import PresentationList from './../components/PresentationList'
-import Helmet from 'react-helmet'
+import {Helmet} from 'react-helmet'
 
 const links = [
   {
