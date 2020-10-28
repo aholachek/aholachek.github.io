@@ -45,7 +45,7 @@ class AboutMe extends Component {
             interfaces.{' '}
           </p>
           <p>
-            I work at <a href="https://www.stashinvest.com/">StashInvest</a> in
+            I work at <a href="https://www.datadoghq.com/">Datadog</a> in
             NYC.
           </p>
 
